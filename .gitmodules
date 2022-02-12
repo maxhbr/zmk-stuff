@@ -1,0 +1,9 @@
+[submodule "mykyria"]
+	path = mykyria
+	url = https://github.com/maxhbr/mykyria
+[submodule "myredox"]
+	path = myredox
+	url = https://github.com/maxhbr/myredox
+[submodule "zmk"]
+	path = zmk
+	url = https://github.com/zmkfirmware/zmk
