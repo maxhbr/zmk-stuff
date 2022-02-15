@@ -7,3 +7,9 @@
 [submodule "zmk"]
 	path = zmk
 	url = https://github.com/zmkfirmware/zmk
+[submodule "zephirum/zephirum"]
+	path = zephirum/zephirum
+	url = https://git.tuxfamily.org/zephirum/zephirum.git/
+[submodule "zephirum/keyboard_lplib"]
+	path = zephirum/keyboard_lplib
+	url = https://git.tuxfamily.org/zephirum/keyboard_lplib.git/
