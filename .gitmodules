@@ -13,3 +13,6 @@
 [submodule "zephirum/keyboard_lplib"]
 	path = zephirum/keyboard_lplib
 	url = https://git.tuxfamily.org/zephirum/keyboard_lplib.git/
+[submodule "misc/KeyV2"]
+	path = misc/KeyV2
+	url = https://github.com/rsheldiii/KeyV2

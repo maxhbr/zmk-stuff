@@ -17,18 +17,20 @@ for row in $(cat build.yaml |
    shield="$(_jq '.shield')"
    CMAKE_ARGS="$(_jq '.cmake-args' || true)"
    ARTIFACT_NAME="${shield}-${board}-zmk"
+   BUILD_DIR="build-${ARTIFACT_NAME}"
 
    west build \
        -s zmk/app \
        -b "$board" \
+       -d "${BUILD_DIR}" \
        -- \
            -DZMK_CONFIG="$(pwd)/config" \
            -DSHIELD="${shield}" \
             ${CMAKE_ARGS}
-   mkdir -p build/artifacts
-   if [ -f build/zephyr/zmk.uf2 ]; then
-       cp build/zephyr/zmk.uf2 "build/artifacts/${ARTIFACT_NAME}.uf2"
-   elif [ -f build/zephyr/zmk.hex ]; then
-       cp build/zephyr/zmk.hex "build/artifacts/${ARTIFACT_NAME}.hex"
+   mkdir -p artifacts
+   if [ -f "${BUILD_DIR}/zephyr/zmk.uf2" ]; then
+       cp "${BUILD_DIR}/zephyr/zmk.uf2" "artifacts/${ARTIFACT_NAME}.uf2"
+   elif [ -f "${BUILD_DIR}/zephyr/zmk.hex" ]; then
+       cp "${BUILD_DIR}/zephyr/zmk.hex" "artifacts/${ARTIFACT_NAME}.hex"
    fi
 done
