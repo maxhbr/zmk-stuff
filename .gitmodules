@@ -16,3 +16,12 @@
 [submodule "misc/KeyV2"]
 	path = misc/KeyV2
 	url = https://github.com/rsheldiii/KeyV2
+[submodule "ergodash/ErgoDash"]
+	path = ergodash/ErgoDash
+	url = https://github.com/omkbd/ErgoDash
+[submodule "myreviung41"]
+	path = myreviung41
+	url = https://github.com/maxhbr/myreviung41
+[submodule "ergotravel/ErgoTravel"]
+	path = ergotravel/ErgoTravel
+	url = https://github.com/jpconstantineau/ErgoTravel

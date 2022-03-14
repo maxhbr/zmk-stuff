@@ -1,4 +1,4 @@
-FROM zmkfirmware/zmk-build-arm:2.5
+FROM zmkfirmware/zmk-build-arm:stable
 RUN set -x \
     && apt-get update && apt-get install -y \
         jq \
