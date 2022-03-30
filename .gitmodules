@@ -8,20 +8,29 @@
 	path = zmk
 	url = https://github.com/zmkfirmware/zmk
 [submodule "zephirum/zephirum"]
-	path = zephirum/zephirum
+	path = otherKeyboards/zephirum/zephirum
 	url = https://git.tuxfamily.org/zephirum/zephirum.git/
 [submodule "zephirum/keyboard_lplib"]
-	path = zephirum/keyboard_lplib
+	path = otherKeyboards/zephirum/keyboard_lplib
 	url = https://git.tuxfamily.org/zephirum/keyboard_lplib.git/
 [submodule "misc/KeyV2"]
 	path = misc/KeyV2
 	url = https://github.com/rsheldiii/KeyV2
 [submodule "ergodash/ErgoDash"]
-	path = ergodash/ErgoDash
+	path = otherKeyboards/ergodash/ErgoDash
 	url = https://github.com/omkbd/ErgoDash
 [submodule "myreviung41"]
 	path = myreviung41
 	url = https://github.com/maxhbr/myreviung41
 [submodule "ergotravel/ErgoTravel"]
-	path = ergotravel/ErgoTravel
+	path = otherKeyboards/ergotravel/ErgoTravel
 	url = https://github.com/jpconstantineau/ErgoTravel
+[submodule "somereviung5/qmk_firmware"]
+	path = somereviung5/qmk_firmware
+	url = https://github.com/qmk/qmk_firmware
+[submodule "avalanche/submodules/avalanche"]
+	path = otherKeyboards/avalanche/submodules/avalanche
+	url = https://github.com/vlkv/avalanche
+[submodule "otherKeyboards/nyx/submodules/nyx-kb"]
+	path = mynyx/submodules/nyx-kb
+	url = https://github.com/tadfisher/nyx-kb
