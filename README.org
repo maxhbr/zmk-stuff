@@ -1,0 +1,9 @@
+* zmk-stuff
+
+** Cases:
+the cases are found in https://github.com/maxhbr/things/tree/main/keyboards
+
+* TODOs:
+** TODO clarify license situation
+** TODO bulid configurations only on change?
+** TODO design the perfect keyboard
