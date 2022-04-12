@@ -34,3 +34,90 @@
 [submodule "otherKeyboards/nyx/submodules/nyx-kb"]
 	path = mynyx/submodules/nyx-kb
 	url = https://github.com/tadfisher/nyx-kb
+[submodule "submodules/nyx-kb"]
+	path = submodules/nyx-kb
+	url = https://github.com/tadfisher/nyx-kb
+[submodule "submodules/submodules/redox-keyboard"]
+	path = submodules/redox-keyboard
+	url = https://github.com/mattdibi/redox-keyboard
+[submodule "submodules/keyswitches.pretty"]
+	path = submodules/keyswitches.pretty
+	url = https://github.com/daprice/keyswitches.pretty
+[submodule "submodules/MX_Alps_Hybrid"]
+	path = submodules/MX_Alps_Hybrid
+	url = https://github.com/ai03-2725/MX_Alps_Hybrid
+[submodule "submodules/keyswitch-kicad-library"]
+	path = submodules/keyswitch-kicad-library
+	url = https://github.com/perigoso/keyswitch-kicad-library
+[submodule "submodules/Hybrid-Switches.pretty"]
+	path = submodules/Hybrid-Switches.pretty
+	url = https://github.com/keebio/Hybrid-Switches.pretty
+[submodule "submodules/keebio-components"]
+	path = submodules/keebio-components
+	url = https://github.com/keebio/keebio-components
+[submodule "submodules/Keebio-Parts.pretty"]
+	path = submodules/Keebio-Parts.pretty
+	url = https://github.com/keebio/Keebio-Parts.pretty
+[submodule "submodules/KiBot-CICD-Template"]
+	path = submodules/KiBot-CICD-Template
+	url = https://github.com/nerdyscout/KiBot-CICD-Template
+[submodule "submodules/yaemk-split-kb"]
+	path = submodules/yaemk-split-kb
+	url = https://github.com/KarlK90/yaemk-split-kb
+[submodule "submodules/keebs.pretty"]
+	path = submodules/keebs.pretty
+	url = https://github.com/egladman/keebs.pretty
+[submodule "submodules/keyboard_parts.pretty"]
+	path = submodules/keyboard_parts.pretty
+	url = https://github.com/tmk/keyboard_parts.pretty
+[submodule "submodules/kicad_lib_tmk"]
+	path = submodules/kicad_lib_tmk
+	url = https://github.com/tmk/kicad_lib_tmk
+[submodule "submodules/keyboard-pcb-guide"]
+	path = submodules/keyboard-pcb-guide
+	url = https://github.com/ruiqimao/keyboard-pcb-guide
+[submodule "submodules/ErgoTravel"]
+	path = submodules/ErgoTravel
+	url = https://github.com/jpconstantineau/ErgoTravel
+[submodule "submodules/ErgoDash"]
+	path = submodules/ErgoDash
+	url = https://github.com/omkbd/ErgoDash
+[submodule "submodules/horizon-kb"]
+	path = submodules/horizon-kb
+	url = https://github.com/tadfisher/horizon-kb
+[submodule "submodules/avalanche"]
+	path = submodules/avalanche
+	url = https://github.com/vlkv/avalanche
+[submodule "submodules/reviung"]
+	path = submodules/reviung
+	url = https://github.com/gtips/reviung
+[submodule "submodules/qmk_firmware"]
+	path = submodules/qmk_firmware
+	url = https://github.com/qmk/qmk_firmware
+[submodule "submodules/Round-Anything"]
+	path = submodules/Round-Anything
+	url = https://github.com/Irev-Dev/Round-Anything
+[submodule "submodules/KeyV2"]
+	path = submodules/KeyV2
+	url = https://github.com/rsheldiii/KeyV2
+[submodule "submodules/keyboard_lplib"]
+	path = submodules/keyboard_lplib
+	url = https://git.tuxfamily.org/zephirum/keyboard_lplib.git/
+[submodule "submodules/zmk"]
+	path = submodules/zmk
+	url = https://github.com/zmkfirmware/zmk
+[submodule "submodules/tented-kyria-case"]
+	path = submodules/tented-kyria-case
+	url = https://github.com/brokenloop/tented-kyria-case
+[submodule "submodules/kyria_3d_cases"]
+	path = submodules/kyria_3d_cases
+	url = https://github.com/jhelvy/kyria_3d_cases
+[submodule "submodules/Kyria_Case"]
+	path = submodules/Kyria_Case
+	url = https://github.com/aaarsene/Kyria_Case
+[submodule "submodules/kyria"]
+	path = submodules/kyria
+	url = https://github.com/splitkb/kyria
+[submodule "submodules/Redox-neodox-Case"]
+	path = submodules/Redox-neodox-Case
+	url = https://github.com/Pastitas/Redox-neodox-Case
