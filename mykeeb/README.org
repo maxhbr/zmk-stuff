@@ -1,0 +1,82 @@
+* mykeeb
+** Why not an existing keeb
+- [[https://github.com/mattdibi/redox-keyboard][REDOX]]
+  - is very close
+    - no HotSwap in the open source variant
+- [[https://github.com/tadfisher/nyx-kb/][NYX]]
+- Kyria
+  - not OSS
+  - to less keys
+- [[https://github.com/omkbd/ErgoDash][ErgoDash]]
+- [[https://github.com/jpconstantineau/ErgoTravel][ErgoTravel]]
+- Zordiak is not OSS
+- [[https://github.com/Pekaso/fortitude60][fortitude60]]
+  - MCU is *Beetle USB 32u4* -> not supported by ZMK
+- [[https://github.com/KarlK90/yaemk-split-kb][YAEMK]]
+  - not supported by ZMK
+
+Other interesting Keyboards are Lily58, Lotus58, Sofle,
+
+** Goals
+- it *must* be fully OSS
+  - especially also PCB and case
+- it *must* support ZMK
+  - it *could* have QMK support
+- it *must* support 3D printed case and switch plate
+  - it *should* have tenting support
+- it *should* be split
+- it *must* have columnar staggered layout
+  - similar to Kyria or REDOX
+- it *should* have _a lot_ of keys:
+  - got used to 35 keys per side. Maybe 30 could also be sufficient.
+  - it *must* have a thumb cluster
+    - maybe a combination of REDOX-style and NYX-style
+  - it *must* have 6 cols
+    - it *should* have 7 cols, i.e. an additional center column
+  - it *should* have a Number row
+  - it *could* have arrow keys
+  - it *does not need* to have encoder support
+- it *could* have 1.5u keys for parts of the thumb cluster
+- it *should* have MX style switches
+  - it *could* also have Choc compatibility
+    - maybe specifically for the thumb cluster?
+- it *should* have HotSwap
+  - preferred via Kailh sockets
+- MCU *should* be mounted visible, and not on the back side
+  - MCU *could* have two sockets to choose orientation per side
+    - I like them chip side up
+  - maybe similar to NYX, Kyria or crkbd
+  - MCU *should* use a standard interconnect like Pro Micro
+- it *should* have PCB support for a switch and battery connections
+- it *could* expose i2c for trackball support
+- it *could* have RGB-LED for feedback regarding activated layers or modifier
+  - could also be done via display
+  - could also be done via the trackpoint led
+  - it *does not need* any further LED stuff
+
+** How to start?
+- base on something
+  - REDOX
+    - no HotSwap
+  - ErgoDash
+    - one less thumb key
+  - NYX
+    - has MX+Chock footprints, but does not fir 5pin MX
+    - uses Horizon EDA
+- from scratch
+  - https://github.com/ruiqimao/keyboard-pcb-guide
+  - which MCU
+    - nRF52840
+      - Nice!Nano
+        - can do >=42 switches per side (41 on reviung41), using 6+7 GPIO pins
+          - should be able to do 49, if one uses the LED pin? or even more?
+      - nRF52830 Dongle
+        - 15 GPIOs
+      - Seeed XIAO BLE
+    - esp32
+      - has 11 GPIO pins 
+        - max 30=5*6 switches?
+        - hummingbird has 30 switches
+
+* Links:
+- https://github.com/diimdeep/awesome-split-keyboards
