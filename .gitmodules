@@ -41,37 +41,37 @@
 	path = submodules/redox-keyboard
 	url = https://github.com/mattdibi/redox-keyboard
 [submodule "submodules/keyswitches.pretty"]
-	path = submodules/keyswitches.pretty
+	path = submodules/kicad/keyswitches.pretty
 	url = https://github.com/daprice/keyswitches.pretty
 [submodule "submodules/MX_Alps_Hybrid"]
-	path = submodules/MX_Alps_Hybrid
+	path = submodules/kicad/MX_Alps_Hybrid
 	url = https://github.com/ai03-2725/MX_Alps_Hybrid
 [submodule "submodules/keyswitch-kicad-library"]
-	path = submodules/keyswitch-kicad-library
+	path = submodules/kicad/keyswitch-kicad-library
 	url = https://github.com/perigoso/keyswitch-kicad-library
 [submodule "submodules/Hybrid-Switches.pretty"]
-	path = submodules/Hybrid-Switches.pretty
+	path = submodules/kicad/Hybrid-Switches.pretty
 	url = https://github.com/keebio/Hybrid-Switches.pretty
 [submodule "submodules/keebio-components"]
-	path = submodules/keebio-components
+	path = submodules/kicad/keebio-components
 	url = https://github.com/keebio/keebio-components
 [submodule "submodules/Keebio-Parts.pretty"]
-	path = submodules/Keebio-Parts.pretty
+	path = submodules/kicad/Keebio-Parts.pretty
 	url = https://github.com/keebio/Keebio-Parts.pretty
 [submodule "submodules/KiBot-CICD-Template"]
-	path = submodules/KiBot-CICD-Template
+	path = submodules/kicad/KiBot-CICD-Template
 	url = https://github.com/nerdyscout/KiBot-CICD-Template
 [submodule "submodules/yaemk-split-kb"]
 	path = submodules/yaemk-split-kb
 	url = https://github.com/KarlK90/yaemk-split-kb
 [submodule "submodules/keebs.pretty"]
-	path = submodules/keebs.pretty
+	path = submodules/kicad/keebs.pretty
 	url = https://github.com/egladman/keebs.pretty
 [submodule "submodules/keyboard_parts.pretty"]
-	path = submodules/keyboard_parts.pretty
+	path = submodules/kicad/keyboard_parts.pretty
 	url = https://github.com/tmk/keyboard_parts.pretty
 [submodule "submodules/kicad_lib_tmk"]
-	path = submodules/kicad_lib_tmk
+	path = submodules/kicad/kicad_lib_tmk
 	url = https://github.com/tmk/kicad_lib_tmk
 [submodule "submodules/keyboard-pcb-guide"]
 	path = submodules/keyboard-pcb-guide
@@ -94,14 +94,11 @@
 [submodule "submodules/qmk_firmware"]
 	path = submodules/qmk_firmware
 	url = https://github.com/qmk/qmk_firmware
-[submodule "submodules/Round-Anything"]
-	path = submodules/Round-Anything
-	url = https://github.com/Irev-Dev/Round-Anything
 [submodule "submodules/KeyV2"]
 	path = submodules/KeyV2
 	url = https://github.com/rsheldiii/KeyV2
 [submodule "submodules/keyboard_lplib"]
-	path = submodules/keyboard_lplib
+	path = submodules/kicad/keyboard_lplib
 	url = https://git.tuxfamily.org/zephirum/keyboard_lplib.git/
 [submodule "submodules/zmk"]
 	path = submodules/zmk
