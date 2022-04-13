@@ -1,5 +1,16 @@
 * zmk-stuff
 
+** Keyboards
+*** REDOX
+my current daily driver
+*** Kyria
+Not sufficient amount of keys, not OSS
+*** NYX
+I am not happy with the thumb cluster, maybe it is good for gaming.
+*** planned / parts exist / untested
+**** ErgoDash
+**** CRKBD
+
 ** Cases:
 the cases are found in https://github.com/maxhbr/things/tree/main/keyboards
 
