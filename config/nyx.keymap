@@ -12,7 +12,7 @@
 
 #define DEFAULT 0
 #define LOWER   1
-#define UPPER   2
+#define ADJ   2
 
 / {
     behaviors {
