@@ -30,6 +30,26 @@
     keymap {
         compatible = "zmk,keymap";
 
+		default_layer { // 0
+			bindings = <
+//+---------+---------+---------+---------+---------+---------+----------+   +----------+---------+---------+---------+---------+---------+---------+
+//|         |         |         |         |         |         |          |   |          |         |         |         |         |         |         |
+  &kp ESC   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp SPC        &kp RET    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
+  &mo ADJ   &kp Q     &kp W     &kp E     &kp R     &kp T     &kp DEL        &kp BSPC   &kp Y     &kp U     &kp I     &kp O     &kp P     &kp LEFT_BRACKET
+  &kp CAPS  &kp A     &kp S     &kp D     &kp F     &kp G     &kp TAB        &kp TAB    &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+  &kp LSHFT &kp Z     &kp X     &kp C     &kp V     &kp B     &kp LCTRL      &kp RCTRL  &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &bmt RSHFT RET
+                       &kp LGUI &mo LOWER &kp LCTRL &mt LALT RET             &bmt RCTRL SPACE &mt RALT RET &mo LOWER &kp RGUI
+
+
+// &mt LSHFT SPC       &mt RSHFT RET
+//   &kp RALT  &kp PG_DN &kp PG_UP &kp LMETA &kp RET             &bmt LMETA RET &lt NUM RET        &lt NUM SPC   &bmt LMETA SPC &kp SPC            &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+
+//|         |         |         |         |                   |             |             |     |             |             |                   |         |         |         |         |
+//+---------+---------+---------+---------+-------------------+-------------+-------------+     +-------------+-------------+-------------------+---------+---------+---------+---------+
+			>;
+        };
+
+/*
         default_layer {
             // | `       | 1    | 2    | 3      | 4       | 5       | -          | =              | 6          | 7       | 8       | 9     | 0      |         |
             // | [       | Q    | W    | E      | R       | T       | //         | \\             | Y          | U       | I       | O     | P      | ]       |
@@ -44,6 +64,7 @@
                                         &kp LGUI &mo LOWER &kp LCTRL &mt LALT RET &bmt RCTRL SPACE &mt RALT RET &mo LOWER &kp RGUI
             >;
         };
+*/
 
         lower_layer {
             // |      | F1   | F2     | F3      | F4     | F5  |      |      | F6      | F7     | F8     | F9      | F10   | F11   |
@@ -68,7 +89,7 @@
             // |          |            |            |            |            |            |      |      |      |      |      |      |      |      |
             // |          |            |            |            |            |            |      |      |      |      |      |      |      |      |
             bindings = <
-                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &trans &trans &trans &trans
+                &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &trans &trans &trans &bootloader 
                 &trans     &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans     &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans     &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans &trans &trans

@@ -4,16 +4,21 @@
   - is very close
     - no HotSwap in the open source variant
 - [[https://github.com/tadfisher/nyx-kb/][NYX]]
+  - not happy with the thumb cluster
 - Kyria
   - not OSS
   - to less keys
 - [[https://github.com/omkbd/ErgoDash][ErgoDash]]
+  - similar to REDOX
+  - thumb cluster is forced to use one 2U
 - [[https://github.com/jpconstantineau/ErgoTravel][ErgoTravel]]
 - Zordiak is not OSS
 - [[https://github.com/Pekaso/fortitude60][fortitude60]]
   - MCU is *Beetle USB 32u4* -> not supported by ZMK
 - [[https://github.com/KarlK90/yaemk-split-kb][YAEMK]]
   - not supported by ZMK
+- [[https://github.com/vlkv/avalanche][The Avalanche keyboard]]
+  - tbd.
 
 Other interesting Keyboards are Lily58, Lotus58, Sofle,
 
@@ -27,6 +32,7 @@ Other interesting Keyboards are Lily58, Lotus58, Sofle,
 - it *should* be split
 - it *must* have columnar staggered layout
   - similar to Kyria or REDOX
+    - Kyria aggressiveness is great!
 - it *should* have _a lot_ of keys:
   - got used to 35 keys per side. Maybe 30 could also be sufficient.
   - it *must* have a thumb cluster
