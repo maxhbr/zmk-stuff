@@ -82,3 +82,12 @@
 [submodule "submodules/Redox-neodox-Case"]
 	path = submodules/Redox-neodox-Case
 	url = https://github.com/Pastitas/Redox-neodox-Case
+[submodule "mykeeb/pcb/submodules/ProMicroKiCad"]
+	path = mykeeb/pcb/submodules/ProMicroKiCad
+	url = https://github.com/Biacco42/ProMicroKiCad
+[submodule "mykeeb/pcb/submodules/nice-nano-kicad"]
+	path = mykeeb/pcb/submodules/nice-nano-kicad
+	url = https://github.com/bstiq/nice-nano-kicad
+[submodule "submodules/crkbd"]
+	path = submodules/crkbd
+	url = https://github.com/foostan/crkbd
