@@ -4,4 +4,5 @@
   (lib (name "Keebio-Parts")(type "KiCad")(uri "${KIPRJMOD}/submodules/Keebio-Parts.pretty")(options "")(descr ""))
   (lib (name "Hybrid-Switches")(type "KiCad")(uri "${KIPRJMOD}/submodules/Hybrid-Switches.pretty")(options "")(descr ""))
   (lib (name "keyswitches")(type "KiCad")(uri "${KIPRJMOD}/submodules/keyswitches.pretty")(options "")(descr ""))
+  (lib (name "mykeeb")(type "KiCad")(uri "${KIPRJMOD}/mykeeb.pretty")(options "")(descr ""))
 )
