@@ -34,19 +34,19 @@ difference(){
                             translate(s) cylinder(d=2.2,h=2,$fn=20);
                         }
                     };
-                cylinder(d=2,h=3,$fn=20);
+                cylinder(d=2.5,h=3,$fn=20);
             };
     }
-    color("red")
-        translate([-38,152])
-        mirror([0,1,0]) {
-            for (s=screwsM3) {
-                translate(s) cylinder(d=3.2,h=10,$fn=20);
-            }
-            for (s=screwsM2) {
-                translate(s) cylinder(d=2.2,h=10,$fn=20);
-            }
-        }
+    /* color("red") */
+    /*     translate([-38,152]) */
+    /*     mirror([0,1,0]) { */
+    /*         for (s=screwsM3) { */
+    /*             translate(s) cylinder(d=3.2,h=10,$fn=20); */
+    /*         } */
+    /*         for (s=screwsM2) { */
+    /*             translate(s) cylinder(d=2.2,h=10,$fn=20); */
+    /*         } */
+    /*     } */
 }
 
 difference() {
