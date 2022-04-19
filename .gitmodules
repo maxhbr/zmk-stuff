@@ -91,3 +91,6 @@
 [submodule "submodules/crkbd"]
 	path = submodules/crkbd
 	url = https://github.com/foostan/crkbd
+[submodule "submodules/hillside"]
+	path = submodules/hillside
+	url = https://github.com/mmccoyd/hillside
