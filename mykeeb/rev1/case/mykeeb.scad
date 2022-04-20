@@ -78,13 +78,13 @@ module shroud() {
         }
         minkowski() {
             hull() {
-                translate([0,0,-addH-1])
+                translate([0,0,-4])
                     linear_extrude(height = 2, convexity = 10)
                     import (file = "../pcb/mykeeb-Nutzer_7.svg");
-                translate([2,0,-addH-1-2])
+                translate([2,0, -3-2])
                     linear_extrude(height = 2, convexity = 10)
                     import (file = "../pcb/mykeeb-Nutzer_7.svg");
-                translate([-2,0,-addH-1-2])
+                translate([-2,0,-3-2])
                     linear_extrude(height = 2, convexity = 10)
                     import (file = "../pcb/mykeeb-Nutzer_7.svg");
             }
