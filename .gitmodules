@@ -5,37 +5,37 @@
 	path = submodules/redox-keyboard
 	url = https://github.com/mattdibi/redox-keyboard
 [submodule "submodules/keyswitches.pretty"]
-	path = mykeeb/pcb/submodules/keyswitches.pretty
+	path = mykeeb/rev1/pcb/submodules/keyswitches.pretty
 	url = https://github.com/daprice/keyswitches.pretty
 [submodule "submodules/MX_Alps_Hybrid"]
-	path = mykeeb/pcb/submodules/MX_Alps_Hybrid
+	path = mykeeb/rev1/pcb/submodules/MX_Alps_Hybrid
 	url = https://github.com/ai03-2725/MX_Alps_Hybrid
 [submodule "submodules/keyswitch-kicad-library"]
-	path = mykeeb/pcb/submodules/keyswitch-kicad-library
+	path = mykeeb/rev1/pcb/submodules/keyswitch-kicad-library
 	url = https://github.com/perigoso/keyswitch-kicad-library
 [submodule "submodules/Hybrid-Switches.pretty"]
-	path = mykeeb/pcb/submodules/Hybrid-Switches.pretty
+	path = mykeeb/rev1/pcb/submodules/Hybrid-Switches.pretty
 	url = https://github.com/keebio/Hybrid-Switches.pretty
 [submodule "submodules/keebio-components"]
-	path = mykeeb/pcb/submodules/keebio-components
+	path = mykeeb/rev1/pcb/submodules/keebio-components
 	url = https://github.com/keebio/keebio-components
 [submodule "submodules/Keebio-Parts.pretty"]
-	path = mykeeb/pcb/submodules/Keebio-Parts.pretty
+	path = mykeeb/rev1/pcb/submodules/Keebio-Parts.pretty
 	url = https://github.com/keebio/Keebio-Parts.pretty
 [submodule "submodules/KiBot-CICD-Template"]
-	path = mykeeb/pcb/submodules/KiBot-CICD-Template
+	path = mykeeb/rev1/pcb/submodules/KiBot-CICD-Template
 	url = https://github.com/nerdyscout/KiBot-CICD-Template
 [submodule "submodules/yaemk-split-kb"]
 	path = submodules/yaemk-split-kb
 	url = https://github.com/KarlK90/yaemk-split-kb
 [submodule "submodules/keebs.pretty"]
-	path = mykeeb/pcb/submodules/keebs.pretty
+	path = mykeeb/rev1/pcb/submodules/keebs.pretty
 	url = https://github.com/egladman/keebs.pretty
 [submodule "submodules/keyboard_parts.pretty"]
-	path = mykeeb/pcb/submodules/keyboard_parts.pretty
+	path = mykeeb/rev1/pcb/submodules/keyboard_parts.pretty
 	url = https://github.com/tmk/keyboard_parts.pretty
 [submodule "submodules/kicad_lib_tmk"]
-	path = mykeeb/pcb/submodules/kicad_lib_tmk
+	path = mykeeb/rev1/pcb/submodules/kicad_lib_tmk
 	url = https://github.com/tmk/kicad_lib_tmk
 [submodule "submodules/keyboard-pcb-guide"]
 	path = submodules/keyboard-pcb-guide
@@ -62,7 +62,7 @@
 	path = submodules/KeyV2
 	url = https://github.com/rsheldiii/KeyV2
 [submodule "submodules/keyboard_lplib"]
-	path = mykeeb/pcb/submodules/keyboard_lplib
+	path = mykeeb/rev1/pcb/submodules/keyboard_lplib
 	url = https://git.tuxfamily.org/zephirum/keyboard_lplib.git/
 [submodule "submodules/zmk"]
 	path = submodules/zmk
@@ -83,10 +83,10 @@
 	path = submodules/Redox-neodox-Case
 	url = https://github.com/Pastitas/Redox-neodox-Case
 [submodule "mykeeb/pcb/submodules/ProMicroKiCad"]
-	path = mykeeb/pcb/submodules/ProMicroKiCad
+	path = mykeeb/rev1/pcb/submodules/ProMicroKiCad
 	url = https://github.com/Biacco42/ProMicroKiCad
 [submodule "mykeeb/pcb/submodules/nice-nano-kicad"]
-	path = mykeeb/pcb/submodules/nice-nano-kicad
+	path = mykeeb/rev1/pcb/submodules/nice-nano-kicad
 	url = https://github.com/bstiq/nice-nano-kicad
 [submodule "submodules/crkbd"]
 	path = submodules/crkbd
