@@ -62,8 +62,8 @@
       35,
       36
     ],
-    "visible_layers": "f26ffff_ffffffff",
-    "zone_display_mode": 0
+    "visible_layers": "e0fffff_ffffffff",
+    "zone_display_mode": 1
   },
   "meta": {
     "filename": "mykeeb.kicad_prl",
