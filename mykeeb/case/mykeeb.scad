@@ -19,8 +19,15 @@ difference(){
                 import (file = "../pcb/mykeeb-Edge_Cuts.svg");
             linear_extrude(height = 3, convexity = 10)
                 import (file = "../pcb/mykeeb-Nutzer_2.svg");
-            linear_extrude(height = 1.5, convexity = 10)
-                import (file = "../pcb/mykeeb-Nutzer_3.svg");
+            minkowski() {
+                union() {
+                    linear_extrude(height = 1.5, convexity = 10)
+                        import (file = "../pcb/mykeeb-Nutzer_2.svg");
+                    linear_extrude(height = 1.5, convexity = 10)
+                        import (file = "../pcb/mykeeb-Nutzer_3.svg");
+                }
+                translate([0,0,-1.5]) cylinder(d1=1,d2=0,h=1.5,$fn=8);
+            }
 
         }
         color("red")
