@@ -10628,6 +10628,7 @@
     ) (layer "User.2") (width 0.15) (fill solid) (tstamp 569645a1-ecfd-441d-9ebb-cadd0fd3bc59))
   (gr_circle (center 180.975 95.25) (end 183.35625 95.25) (layer "User.2") (width 0.15) (fill none) (tstamp 68315014-d434-4606-8191-5c9587dbab65))
   (gr_circle (center 190.5 88.10625) (end 192.88125 88.10625) (layer "User.2") (width 0.15) (fill none) (tstamp 771fc3b7-b105-4dcb-8c4d-f5bf40895ee1))
+  (gr_circle (center 161.918165 37.105785) (end 164.299415 37.105785) (layer "User.2") (width 0.15) (fill none) (tstamp cfd7e72c-a8aa-4b3b-9d23-bfbdcdf8a63c))
   (gr_poly
     (pts
       (xy 179.832 73.406)
@@ -10658,11 +10659,28 @@
     ) (layer "User.3") (width 0.15) (fill solid) (tstamp 646bb9e2-ac44-48b9-8845-67db74eac578))
   (gr_poly
     (pts
+      (xy 166.6875 41.671875)
+      (xy 157.1625 41.671875)
+      (xy 157.1625 33.3375)
+      (xy 166.6875 33.3375)
+    ) (layer "User.3") (width 0.15) (fill solid) (tstamp bdcf26bd-b0ab-48ac-b629-ee125a49ec01))
+  (gr_poly
+    (pts
       (xy 185.7375 100.0125)
       (xy 176.2125 100.0125)
       (xy 176.2125 90.4875)
       (xy 185.7375 90.4875)
     ) (layer "User.3") (width 0.15) (fill solid) (tstamp ffbc7f1b-bd83-4227-a376-cae88efe83c6))
+  (gr_circle (center 44.4 43.97) (end 45.9 43.97) (layer "User.4") (width 0.15) (fill none) (tstamp 2052c7d9-db22-47d5-a59b-8fed1f71e361))
+  (gr_circle (center 135.73 36.91) (end 137.23 36.91) (layer "User.4") (width 0.15) (fill none) (tstamp 3c752a9e-f151-471c-85d8-b50e96bfa28f))
+  (gr_circle (center 164.31 121.44) (end 165.81 121.44) (layer "User.4") (width 0.15) (fill none) (tstamp 40e99c42-a91d-4ba5-b5f4-1b8ef1489e6a))
+  (gr_circle (center 111.92 111.92) (end 113.42 111.92) (layer "User.4") (width 0.15) (fill none) (tstamp 4d9426ef-9fbb-4ebd-a33a-584a1fb86a64))
+  (gr_circle (center 194.11 108.54) (end 195.61 108.54) (layer "User.4") (width 0.15) (fill none) (tstamp 5b33488c-3a65-4cd8-9d78-5acd4c42b9a7))
+  (gr_circle (center 61.01 144.02) (end 62.51 144.02) (layer "User.4") (width 0.15) (fill none) (tstamp 6cceaa53-d716-4ad9-909c-70c7d43845a3))
+  (gr_circle (center 132.35 71.44) (end 133.35 71.44) (layer "User.4") (width 0.15) (fill none) (tstamp 9e6e72f5-4609-47ce-9895-9214a41282f5))
+  (gr_circle (center 174.83 50.68) (end 175.83 50.68) (layer "User.4") (width 0.15) (fill none) (tstamp c5868367-44a1-4a7c-ac2c-d378bbbcc1b6))
+  (gr_circle (center 75.2 83.35) (end 76.2 83.35) (layer "User.4") (width 0.15) (fill none) (tstamp de10841c-808c-4928-920e-887b464849f3))
+  (gr_circle (center 194.07 78.22) (end 195.07 78.22) (layer "User.4") (width 0.15) (fill none) (tstamp faa0e78a-f154-4f49-b418-16d9122e70cb))
   (gr_line locked (start 111.760381 101.917246) (end 97.789619 101.917246) (layer "User.5") (width 0.25) (tstamp 02f46f01-939e-4b4e-a8c2-76226fe9b1a4))
   (gr_curve locked (pts (xy 176.485045 26.789222) (xy 176.537631 30.446205) (xy 176.630156 34.098785) (xy 176.774419 37.7453)) (layer "User.5") (width 0.25) (tstamp 044f297e-b971-4602-8605-2afc1925b3eb))
   (gr_curve locked (pts (xy 156.598671 158.767281) (xy 156.495469 158.653412) (xy 156.391667 158.540173) (xy 156.287271 158.427555)) (layer "User.5") (width 0.25) (tstamp 04657b11-4c01-49e0-b799-b10b116b134e))
@@ -11174,6 +11192,15 @@
   (gr_arc locked (start 54.856618 119.718392) (mid 54.768746 119.930518) (end 54.556618 120.018392) (layer "User.6") (width 0.2) (tstamp fcd97965-bb4b-4505-8ed9-6326260adb74))
   (gr_arc locked (start 152.617323 111.718142) (mid 152.477545 111.53598) (end 152.507515 111.308334) (layer "User.6") (width 0.2) (tstamp fd8e0674-baa2-441e-b95e-e47e933a056c))
   (gr_arc locked (start 128.455811 115.094581) (mid 128.595589 114.912419) (end 128.823235 114.882449) (layer "User.6") (width 0.2) (tstamp fe268fe2-fe04-4c86-9fc9-ff18b191e795))
+  (gr_poly
+    (pts
+      (xy 130.635375 138.1125)
+      (xy 130.048 139.192)
+      (xy 127 139.192)
+      (xy 126.285625 138.1125)
+      (xy 126.285625 136.921875)
+      (xy 130.635375 136.921875)
+    ) (layer "User.7") (width 0.15) (fill solid) (tstamp 7c325516-feab-4a63-b7ed-2d08a91797d9))
   (gr_text "+" (at 171.45 86.166) (layer "B.SilkS") (tstamp 3cda32b8-32b9-46e5-a72f-5048f84cb0de)
     (effects (font (size 3 3) (thickness 0.5)) (justify mirror))
   )
