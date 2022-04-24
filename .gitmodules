@@ -94,3 +94,6 @@
 [submodule "submodules/hillside"]
 	path = submodules/hillside
 	url = https://github.com/mmccoyd/hillside
+[submodule "mykeeb/submodules/Panelization.pretty"]
+	path = mykeeb/submodules/Panelization.pretty
+	url = https://github.com/madworm/Panelization.pretty
