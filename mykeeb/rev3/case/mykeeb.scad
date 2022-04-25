@@ -6,7 +6,7 @@ module bottom() {
         difference() {
             union() {
                 linear_extrude(height = 2, convexity = 10)
-                    import (file = "../pcb/mykeeb-Edge_Cuts.svg");
+                    import (file = "../pcb/mykeeb-Nutzer_9.svg");
             }
         }
     }
@@ -26,7 +26,7 @@ module plate() {
             translate([0,0,2])
                 difference() {
                     linear_extrude(height = 3, convexity = 10)
-                        import (file = "../pcb/mykeeb-Edge_Cuts.svg");
+                        import (file = "../pcb/mykeeb-Nutzer_9.svg");
                     minkowski() {
                         union() {
                             linear_extrude(height = 1.5, convexity = 10)
@@ -51,14 +51,14 @@ module shroud() {
         minkowski() {
             translate([0,0,-addH])
                 linear_extrude(height = 5, convexity = 10)
-                import (file = "../pcb/mykeeb-Edge_Cuts.svg");
+                import (file = "../pcb/mykeeb-Nutzer_9.svg");
             cylinder(d1=4,d2=1,h=addH);
 
         }
         difference() {
             translate([0,0,-addH])
                 linear_extrude(height = 5+addH, convexity = 10)
-                import (file = "../pcb/mykeeb-Edge_Cuts.svg");
+                import (file = "../pcb/mykeeb-Nutzer_9.svg");
             difference() {
                     minkowski() {
                         linear_extrude(height = 2, convexity = 10)
@@ -72,7 +72,7 @@ module shroud() {
         minkowski() {
             translate([0,0,-addH])
                 linear_extrude(height = addH-1, convexity = 10)
-                import (file = "../pcb/mykeeb-Edge_Cuts.svg");
+                import (file = "../pcb/mykeeb-Nutzer_9.svg");
             cylinder(d=0.5, h=1, $fn=8);
         }
         for(t=[[-0.2,-0.2],[-0.2,0.2],[0.2,-0.2],[0.2,0.2]]) {

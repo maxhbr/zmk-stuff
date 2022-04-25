@@ -157,4 +157,9 @@
   (pad "1" smd rect (at -6.29 5.08) (size 2.55 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp 2659487b-f793-482b-b473-3f02d52a3e93))
   (pad "2" smd rect (at 7.56 -2.54) (size 2.55 2.5) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 15f6ed96-864c-46df-83bd-8a6924f6c274))
   (pad "2" smd rect (at 7.56 2.54) (size 2.55 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp 3971e021-15fd-4bc7-b90d-46e4c1b87e55))
+  (model "${KIPRJMOD}/mykeeb.pretty/3dmodels/Kailh Hotswap MX v22.step"
+    (offset (xyz 0.6 -4.75 -3.5))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )
