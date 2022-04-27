@@ -97,3 +97,9 @@
 [submodule "mykeeb/submodules/Panelization.pretty"]
 	path = mykeeb/submodules/Panelization.pretty
 	url = https://github.com/madworm/Panelization.pretty
+[submodule "submodules/mitosis-hardware"]
+	path = submodules/mitosis-hardware
+	url = https://github.com/reversebias/mitosis-hardware
+[submodule "submodules/jiran-ble-lite"]
+	path = submodules/jiran-ble-lite
+	url = https://github.com/Ladniy/jiran-ble-lite
