@@ -3030,6 +3030,23 @@
     (pin "2" (uuid 98de2cea-1275-45ce-9789-0ff5134f353c))
   )
 
+  (symbol (lib_id "Mechanical:MountingHole") (at 387.35 191.77 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid 207bc95f-5d5d-4eff-b3a7-9d02aec97b29)
+    (property "Reference" "H31" (id 0) (at 389.89 190.4999 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Value" "MountingHole" (id 1) (at 389.89 193.0399 0)
+      (effects (font (size 1.27 1.27)) (justify left))
+    )
+    (property "Footprint" "MountingHole:MountingHole_3.2mm_M3" (id 2) (at 387.35 191.77 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (id 3) (at 387.35 191.77 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+  )
+
   (symbol (lib_id "keebio:ProMicro") (at 57.15 41.91 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 224bd44c-5368-4ae5-aef4-03433e51f138)
@@ -5139,6 +5156,9 @@
     )
     (path "/16579854-61da-4ae5-bc87-92245ed1aa86"
       (reference "H30") (unit 1) (value "Hole") (footprint "mykeeb:breakaway-hole-center")
+    )
+    (path "/207bc95f-5d5d-4eff-b3a7-9d02aec97b29"
+      (reference "H31") (unit 1) (value "MountingHole") (footprint "MountingHole:MountingHole_3.2mm_M3")
     )
     (path "/4c97b8e7-b85d-4d19-880f-480e666b3f54"
       (reference "J1") (unit 1) (value "Conn_02x08_Odd_Even") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x08_P2.54mm_Vertical")

@@ -103,3 +103,21 @@
 [submodule "submodules/jiran-ble-lite"]
 	path = submodules/jiran-ble-lite
 	url = https://github.com/Ladniy/jiran-ble-lite
+[submodule "submodules/dao-choc-ble"]
+	path = submodules/dao-choc-ble
+	url = https://github.com/yumagulovrn/dao-choc-ble
+[submodule "submodules/non-split/cyber60"]
+	path = submodules/cyber60
+	url = https://github.com/4pplet/cyber60
+[submodule "Adafruit_nRF52_Bootloader"]
+	path = Adafruit_nRF52_Bootloader
+	url = https://github.com/yumagulovrn/Adafruit_nRF52_Bootloader
+[submodule "submodules/le_chiff_ble"]
+	path = submodules/le_chiff_ble
+	url = https://github.com/MangoIV/le_chiff_ble
+[submodule "submodules/jorne"]
+	path = submodules/jorne
+	url = https://github.com/joric/jorne
+[submodule "submodules/cantor"]
+	path = submodules/cantor
+	url = https://github.com/diepala/cantor
