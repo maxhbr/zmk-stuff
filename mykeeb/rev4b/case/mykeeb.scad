@@ -86,61 +86,75 @@ module keyCutout(top=true) {
 // ## bottom ##################################################################
 // ############################################################################
 
+module bottomBoundary() {
+    rotate([0,angle,0])
+        linear_extrude(height = 100, convexity = 10)
+        projection(cut = false)
+        rotate([0,-angle,0]) {
+            edge(top=true);
+            edge(top=false);
+        }
+}
 module bottom() {
-    difference() {
-        intersection() {
-            union() {
-                difference() {
-                    translate([0,0,-1.6-2]) {
-                        rotate([-90,0,0])
-                            rotate_extrude(angle=angle, convexity=10) 
-                            import (file = "../mykeeb/mykeeb-Edge_Cuts.svg");
-                        linear_extrude(height = 2, convexity = 10)
-                            import (file = "../mykeeb/mykeeb-Nutzer_4.svg");
-                        screwHoles(h=0.5, top=true)
-                            cylinder(d1=5, d2=4, h=1.5, $fn=20);
-                    }
-                    minkowski() {
-                        translate(lowerDrop + [0,0,-3])
-                            edge(h=40, top=false);
-                        cylinder(d=2, h=1, $fn=8);
-                    }
-                    screwHoles(h=0.5, top=true)
-                        translate([0,0,-8])
-                        cylinder(d1=2, h=1.5+8, $fn=20);
-                }
-                translate(lowerDrop) {
+    color("green")
+        render(convexity = 2)
+        difference() {
+            intersection() {
+                union() {
                     difference() {
                         translate([0,0,-1.6-2]) {
                             rotate([-90,0,0])
                                 rotate_extrude(angle=angle, convexity=10) 
-                                translate(lowerOffset)
-                                import (file = "../mykeeb-adapter/mykeeb-adapter-Edge_Cuts.svg");
+                                import (file = "../mykeeb/mykeeb-Edge_Cuts.svg");
                             linear_extrude(height = 2, convexity = 10)
-                                translate(lowerOffset)
-                                import (file = "../mykeeb-adapter/mykeeb-adapter-Nutzer_4.svg");
-                            screwHoles(h=0.5, top=false)
+                                import (file = "../mykeeb/mykeeb-Nutzer_4.svg");
+                            screwHoles(h=0.5, top=true)
                                 cylinder(d1=5, d2=4, h=1.5, $fn=20);
                         }
-                        screwHoles(h=0.5, top=false)
+                        minkowski() {
+                            translate(lowerDrop + [0,0,-3])
+                                edge(h=40, top=false);
+                            cylinder(d=2, h=1, $fn=8);
+                        }
+                        screwHoles(h=0.5, top=true)
                             translate([0,0,-8])
                             cylinder(d1=2, h=1.5+8, $fn=20);
                     }
+                    translate(lowerDrop) {
+                        difference() {
+                            translate([0,0,-1.6-2]) {
+                                rotate([-90,0,0])
+                                    rotate_extrude(angle=angle, convexity=10) 
+                                    translate(lowerOffset)
+                                    import (file = "../mykeeb-adapter/mykeeb-adapter-Edge_Cuts.svg");
+                                linear_extrude(height = 2, convexity = 10)
+                                    translate(lowerOffset)
+                                    import (file = "../mykeeb-adapter/mykeeb-adapter-Nutzer_4.svg");
+                                screwHoles(h=0.5, top=false)
+                                    cylinder(d1=5, d2=4, h=1.5, $fn=20);
+                            }
+                            screwHoles(h=0.5, top=false)
+                                translate([0,0,-8])
+                                cylinder(d1=2, h=1.5+8, $fn=20);
+                        }
+                    }
                 }
+                limitCube();
+                rotate([0,angle,0])
+                    translate([5,-50,-50])
+                    cube([200,150,150]);
             }
-            limitCube();
-        rotate([0,angle,0])
-            translate([5,-50,-50])
-                cube([200,150,150]);
+            minkowski() {
+                translate([0,0,-16-16])
+                    linear_extrude(height = 16, convexity = 10)
+                    translate(lowerOffset)
+                    import (file = "../mykeeb-adapter/mykeeb-adapter-Nutzer_7.svg");
+                cylinder(d=2, h=1, $fn=8);
+            }
+
+            translate([67,70,-36])
+                cube([20,50,15]);
         }
-        minkowski() {
-            translate([0,0,-16-16])
-                linear_extrude(height = 16, convexity = 10)
-                translate(lowerOffset)
-                import (file = "../mykeeb-adapter/mykeeb-adapter-Nutzer_7.svg");
-            cylinder(d=2, h=1, $fn=8);
-        }
-    }
 }
 
 // ############################################################################
@@ -223,24 +237,29 @@ module shroud(top=true) {
 
 
 module top(top=true) {
-    if (top) {
-        color("blue")
-            render(convexity = 2) {
-                intersection() {
-                    union() {
-                        plate();
-                        shroud();
+    difference() {
+        if (top) {
+            color("blue")
+                render(convexity = 2) {
+                    intersection() {
+                        union() {
+                            plate();
+                            shroud();
+                        }
+                        limitCube();
                     }
-                    limitCube();
                 }
-            }
-    } else {
-        color("red")
-            translate(lowerDrop)
-            render(convexity = 2) {
-                plate(top=false);
-                shroud(top=false);
-            }
+        } else {
+            color("red")
+                translate(lowerDrop)
+                render(convexity = 2) {
+                    plate(top=false);
+                    shroud(top=false);
+                }
+        }
+        for(t=[[0.2,0.2,0],[-0.2,0.2,0],[-0.2,-0.2,0],[0.2,-0.2,0]]){
+            bottom();
+        }
     }
 }
 
@@ -265,6 +284,7 @@ module adapterPlate() {
 // ############################################################################
 // ## compose #################################################################
 // ############################################################################
+
 
 
 rotate([0,-angle,0]) {
