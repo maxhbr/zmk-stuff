@@ -688,11 +688,11 @@
     (options (clearance outline) (anchor rect))
     (primitives
       (gr_poly (pts
-          (xy 0.5 0.75)
+          (xy 1 0.75)
           (xy -0.65 0.75)
           (xy -0.15 0)
           (xy -0.65 -0.75)
-          (xy 0.5 -0.75)
+          (xy 1 -0.75)
         ) (width 0) (fill yes))
     ) (tstamp 230f62e2-cc61-4479-9c55-a2e32ed520ff))
   (pad "2" smd custom (at -11.43 4.468 90) (size 0.3 0.3) (layers "F.Cu" "F.Mask")
