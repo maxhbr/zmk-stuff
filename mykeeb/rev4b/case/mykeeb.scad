@@ -1,3 +1,5 @@
+task=""; // ["","lids","wedge"]
+
 angle=35;
 lowerDrop=[0,0,-1.6-11];
 lowerOffset=[-0.0005,-43.357,0];
@@ -285,14 +287,7 @@ module adapterPlate() {
 // ## compose #################################################################
 // ############################################################################
 
-
-
-rotate([0,-angle,0]) {
-    top();
-    top(top=false);
-
-    bottom();
-
+module pcbs() {
     if($preview) {
         translate([86.99,38.175,-1.6])
             color("gray")
@@ -302,10 +297,32 @@ rotate([0,-angle,0]) {
             import("../mykeeb-adapter/mykeeb-adapter.stl");
     }
 }
-translate([0,200,0]){
-    top();
-    top(top=false);
-};
 
-translate([200,0,0])
-    bottom();
+
+if(task == "") {
+    rotate([0,-angle,0]) {
+        top();
+        top(top=false);
+
+        bottom();
+        pcbs();
+    }
+    translate([0,200,0]){
+        top();
+        top(top=false);
+    };
+
+    translate([200,0,0])
+        bottom();
+}
+if(task == "lids") {
+    rotate([0,180,0]) {
+        top();
+        translate([20,-20,0] - lowerDrop)
+            top(top=false);
+    }
+}
+if(task == "wedge") {
+    rotate([0,-angle,0])
+        bottom();
+}
