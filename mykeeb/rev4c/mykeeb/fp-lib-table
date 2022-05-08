@@ -1,0 +1,9 @@
+(fp_lib_table
+  (lib (name "keyboard_parts")(type "KiCad")(uri "${KIPRJMOD}/../../submodules/keyboard_parts.pretty")(options "")(descr ""))
+  (lib (name "keebs")(type "KiCad")(uri "${KIPRJMOD}/../../submodules/keebs.pretty")(options "")(descr ""))
+  (lib (name "Keebio-Parts")(type "KiCad")(uri "${KIPRJMOD}/../../submodules/Keebio-Parts.pretty")(options "")(descr ""))
+  (lib (name "Hybrid-Switches")(type "KiCad")(uri "${KIPRJMOD}/../../submodules/Hybrid-Switches.pretty")(options "")(descr ""))
+  (lib (name "keyswitches")(type "KiCad")(uri "${KIPRJMOD}/../../submodules/keyswitches.pretty")(options "")(descr ""))
+  (lib (name "mykeeb")(type "KiCad")(uri "${KIPRJMOD}/../mykeeb.pretty")(options "")(descr ""))
+  (lib (name "Panelization")(type "KiCad")(uri "${KIPRJMOD}/../../submodules/Panelization.pretty")(options "")(descr ""))
+)
