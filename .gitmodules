@@ -121,3 +121,12 @@
 [submodule "submodules/cantor"]
 	path = submodules/cantor
 	url = https://github.com/diepala/cantor
+[submodule "mykeeb/submodules/kbd"]
+	path = mykeeb/submodules/kbd
+	url = https://github.com/foostan/kbd
+[submodule "submodules/Buzzard"]
+	path = submodules/Buzzard
+	url = https://github.com/crehmann/Buzzard
+[submodule "submodules/zmk-uno"]
+	path = submodules/zmk-uno
+	url = https://github.com/petejohanson/zmk-uno
