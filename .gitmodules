@@ -130,3 +130,6 @@
 [submodule "submodules/zmk-uno"]
 	path = submodules/zmk-uno
 	url = https://github.com/petejohanson/zmk-uno
+[submodule "submodules/ergogen"]
+	path = submodules/ergogen
+	url = https://github.com/ergogen/ergogen
