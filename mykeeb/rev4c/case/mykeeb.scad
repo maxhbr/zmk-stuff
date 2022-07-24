@@ -113,7 +113,7 @@ module bottom() {
                     difference() {
                         translate([0,0,-1.6-2]) {
                             rotate([-90,0,0])
-                                rotate_extrude(angle=angle, convexity=10) 
+                                rotate_extrude(angle=angle, convexity=10)
                                 import (file = "../mykeeb/mykeeb-Edge_Cuts.svg");
                             linear_extrude(height = 2, convexity = 10)
                                 import (file = "../mykeeb/mykeeb-Nutzer_4.svg");
@@ -127,7 +127,8 @@ module bottom() {
                         }
                         screwHoles(h=0.5, top=true)
                             translate([0,0,-8])
-                            cylinder(d1=2, h=1.5+8, $fn=20);
+                            cylinder(d1=1, h=1.5+8, $fn=20);
+                        translate([67,0,-60]) rotate([0,55,0]) cube([100,55,100]);
                     }
                     translate(lowerDrop) {
                         difference() {
@@ -144,7 +145,13 @@ module bottom() {
                             }
                             screwHoles(h=0.5, top=false)
                                 translate([0,0,-8])
-                                cylinder(d1=2, h=1.5+8, $fn=20);
+                                cylinder(d1=1, h=1.5+8, $fn=20);
+                            translate([65,-62,-100])
+                                rotate([20,0,0])
+                                cube([100,50,100]);
+                            translate([80,-38,-80])
+                                rotate([0,50,0])
+                                cube([100,50,120]);
                         }
                     }
                 }
