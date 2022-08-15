@@ -133,3 +133,6 @@
 [submodule "submodules/ergogen"]
 	path = submodules/ergogen
 	url = https://github.com/ergogen/ergogen
+[submodule "submodules/keyboard-pcbs"]
+	path = submodules/keyboard-pcbs
+	url = https://github.com/mtl/keyboard-pcbs
