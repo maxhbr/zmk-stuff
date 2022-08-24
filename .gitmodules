@@ -136,3 +136,12 @@
 [submodule "submodules/keyboard-pcbs"]
 	path = submodules/keyboard-pcbs
 	url = https://github.com/mtl/keyboard-pcbs
+[submodule "submodules/taira-keyboard"]
+	path = submodules/taira-keyboard
+	url = https://github.com/strayer/taira-keyboard
+[submodule "submodules/Pinky4"]
+	path = submodules/Pinky4
+	url = https://github.com/tamanishi/Pinky4
+[submodule "submodules/keyboard_reversible.pretty"]
+	path = submodules/keyboard_reversible.pretty
+	url = https://github.com/50an6xy06r6n/keyboard_reversible.pretty
