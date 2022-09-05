@@ -12,7 +12,8 @@
 
 #define DEFAULT 0
 #define NUM     1
-#define ADJ     2
+#define SYS     2
+#define ADJ     3
 
 #define PTAB LC(PG_UP)
 #define NTAB LC(PG_DN)
@@ -57,12 +58,25 @@
   &mo ADJ   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &trans                                          &trans        &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp F12
   &trans    &none     &kp PTAB  &kp PG_UP &none     &none     &trans          /* ---------+     +--------- */ &trans        &none     &none     &kp UP    &none     &none     &trans
   &trans    &none     &kp NTAB  &kp PG_DN &kp INS   &none     &trans        &trans              &trans        &trans        &none     &kp LEFT  &kp DOWN  &kp RIGHT &none     &trans
+  &trans    &trans    &trans    &trans    &trans              &trans        &mo SYS             &mo SYS       &trans        &trans              &trans    &trans    &trans    &trans
+//|         |         |         |         |                   |             |             |     |             |             |                   |         |         |         |         |
+//+---------+---------+---------+---------+-------------------+-------------+-------------+     +-------------+-------------+-------------------+---------+---------+---------+---------+
+			>;
+		};
+		sys_layer { // 2
+			bindings = <
+//+---------+---------+---------+---------+---------+---------+                                                             +---------+---------+---------+---------+---------+---------+
+//|         |         |         |         |         |         |                                                             |         |         |         |         |         |         |
+  &trans &kp LC(LA(F1)) &kp LC(LA(F2)) &kp LC(LA(F3)) &kp LC(LA(F4)) &kp LC(LA(F5)) /* ---------+ +--------- */ &kp LC(LA(F6)) &kp LC(LA(F7)) &kp LC(LA(F8)) &kp LC(LA(F9)) &kp LC(LA(F10)) &kp LC(LA(F11))
+  &reset    &none     &none     &none     &none     &none     &none                                           &none         &none     &none     &none     &none     &none     &trans
+  &trans    &none     &none     &none     &none     &none     &none           /* ---------+     +--------- */ &none         &none     &none     &none     &none     &none     &trans
+  &caps_word &none    &none     &none     &none     &none     &trans        &trans              &trans        &trans        &none     &none     &none     &none     &none     &caps_word
   &trans    &trans    &trans    &trans    &trans              &trans        &trans              &trans        &trans        &trans              &trans    &trans    &trans    &trans
 //|         |         |         |         |                   |             |             |     |             |             |                   |         |         |         |         |
 //+---------+---------+---------+---------+-------------------+-------------+-------------+     +-------------+-------------+-------------------+---------+---------+---------+---------+
 			>;
 		};
-		adj_layer { // 2
+		adj_layer { // 3
 			bindings = <
 //+---------+---------+---------+---------+---------+---------+                                                             +---------+---------+---------+---------+---------+---------+
 //|         |         |         |         |         |         |                                                             |         |         |         |         |         |         |
