@@ -145,3 +145,12 @@
 [submodule "submodules/keyboard_reversible.pretty"]
 	path = submodules/keyboard_reversible.pretty
 	url = https://github.com/50an6xy06r6n/keyboard_reversible.pretty
+[submodule "submodules/pluckey"]
+	path = submodules/pluckey
+	url = https://github.com/floookay/pluckey
+[submodule "submodules/corne-xiao"]
+	path = submodules/corne-xiao
+	url = https://github.com/lehmanju/corne-xiao
+[submodule "submodules/revxlp"]
+	path = submodules/revxlp
+	url = https://gitlab.com/lpgalaxy/revxlp
