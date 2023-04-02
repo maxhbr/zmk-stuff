@@ -166,3 +166,9 @@
 [submodule "submodules/mikoto"]
 	path = submodules/mikoto
 	url = https://github.com/zhiayang/mikoto
+[submodule "submodules/revxlp-config"]
+	path = submodules/revxlp-config
+	url = https://github.com/petejohanson/revxlp-config
+[submodule "submodules/taira-keyboard-zmk-config"]
+	path = submodules/taira-keyboard-zmk-config
+	url = https://github.com/strayer/taira-keyboard-zmk-config
