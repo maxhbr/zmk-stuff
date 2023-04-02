@@ -154,3 +154,15 @@
 [submodule "submodules/revxlp"]
 	path = submodules/revxlp
 	url = https://gitlab.com/lpgalaxy/revxlp
+[submodule "submodules/zaphod"]
+	path = submodules/zaphod
+	url = git@gitlab.com:lpgalaxy/zaphod.git
+[submodule "submodules/Le-Chiffre-Keyboard"]
+	path = submodules/Le-Chiffre-Keyboard
+	url = https://github.com/tominabox1/Le-Chiffre-Keyboard
+[submodule "submodules/NRF52-Board"]
+	path = submodules/NRF52-Board
+	url = https://github.com/jpconstantineau/NRF52-Board
+[submodule "submodules/mikoto"]
+	path = submodules/mikoto
+	url = https://github.com/zhiayang/mikoto
