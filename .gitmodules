@@ -178,3 +178,12 @@
 [submodule "zmk-config"]
 	path = zmk-config
 	url = https://github.com/maxhbr/zmk-config
+[submodule "submodules/CrowBoard"]
+	path = submodules/CrowBoard
+	url = https://github.com/doesntfazer/CrowBoard
+[submodule "submodules/eternal-keypad"]
+	path = submodules/eternal-keypad
+	url = https://github.com/duckyb/eternal-keypad
+[submodule "mykeeb/rev6"]
+	path = mykeeb/rev6
+	url = https://github.com/maxhbr/redox-meets-dao-choc-ble
