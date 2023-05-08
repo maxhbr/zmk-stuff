@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: redox-meets-friends
+Upstream-Contact: Maximilian Huber <gh@maxhbr.de>
+Source: https://github.com/maxhbr/redox-meets-revxlp
+
+# Sample paragraph, commented out:
+#
+# Files: src/*
+# Copyright: $YEAR $NAME <$CONTACT>
+# License: ...
