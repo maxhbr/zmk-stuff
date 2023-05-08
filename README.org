@@ -1,0 +1,5 @@
+#+title: Readme
+
+* Building a Redox Style Split with xiaos + Shift Registers
+
+similar to https://github.com/maxhbr/redox-meets-dao-choc-ble, but with a different set of electronics.
