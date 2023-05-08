@@ -187,3 +187,6 @@
 [submodule "mykeeb/rev6"]
 	path = mykeeb/rev6
 	url = https://github.com/maxhbr/redox-meets-dao-choc-ble
+[submodule "submodules/uninarf"]
+	path = submodules/uninarf
+	url = https://github.com/sebastian-stumpf/uninarf
