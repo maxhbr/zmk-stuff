@@ -1,15 +1,15 @@
 [submodule "revxlp"]
-	path = revxlp
+	path = submodules/revxlp
 	url = https://gitlab.com/lpgalaxy/revxlp
 [submodule "uninarf"]
-	path = uninarf
+	path = submodules/uninarf
 	url = https://github.com/sebastian-stumpf/uninarf
 [submodule "TOTEM"]
-	path = TOTEM
+	path = submodules/TOTEM
 	url = https://github.com/GEIGEIGEIST/TOTEM
 [submodule "redox-keyboard"]
-	path = redox-keyboard
+	path = submodules/redox-keyboard
 	url = https://github.com/mattdibi/redox-keyboard/
 [submodule "kyria"]
-	path = kyria
+	path = submodules/kyria
 	url = https://github.com/splitkb/kyria/
