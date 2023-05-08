@@ -3,3 +3,10 @@
 * Building a Redox Style Split with xiaos + Shift Registers
 
 similar to https://github.com/maxhbr/redox-meets-dao-choc-ble, but with a different set of electronics.
+
+** The Idea:
+*** Take the electronics from revxlp / uninarf
+- Maybe with potential for (partial) JLC PCBA assembly
+- using the xiao footprint from the TOTEM
+*** Take the Rough layout from Redox
+*** Adopt to the pinky stagger from the Kyria

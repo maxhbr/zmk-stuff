@@ -1,0 +1,15 @@
+[submodule "revxlp"]
+	path = revxlp
+	url = https://gitlab.com/lpgalaxy/revxlp
+[submodule "uninarf"]
+	path = uninarf
+	url = https://github.com/sebastian-stumpf/uninarf
+[submodule "TOTEM"]
+	path = TOTEM
+	url = https://github.com/GEIGEIGEIST/TOTEM
+[submodule "redox-keyboard"]
+	path = redox-keyboard
+	url = https://github.com/mattdibi/redox-keyboard/
+[submodule "kyria"]
+	path = kyria
+	url = https://github.com/splitkb/kyria/
