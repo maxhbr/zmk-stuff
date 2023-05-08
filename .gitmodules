@@ -190,3 +190,6 @@
 [submodule "submodules/uninarf"]
 	path = submodules/uninarf
 	url = https://github.com/sebastian-stumpf/uninarf
+[submodule "submodules/TOTEM"]
+	path = submodules/TOTEM
+	url = https://github.com/GEIGEIGEIST/TOTEM
