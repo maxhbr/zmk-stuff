@@ -74,7 +74,7 @@
   (pad "" np_thru_hole circle (at 5.08 0 48.0996) (size 1.75 1.75) (drill 1.75) (layers "*.Cu" "*.Mask") (tstamp a55eb05c-02ed-429b-85f9-55e38905be63))
   (pad "1" smd rect (at -7.085 -2.54) (size 2.55 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp 24e7ff2e-d16d-43db-b5f9-7882675f2e7e))
   (pad "2" smd rect (at 5.842 -5.08) (size 2.55 2.5) (layers "B.Cu" "B.Paste" "B.Mask") (tstamp f0b2f0f1-bc0f-460e-875a-a1c93c72d8fa))
-  (model "${KILIB}/MX_Alps_Hybrid.pretty/MX_Only.pretty/3d_shapes/CPG151101S11.wrl"
+  (model "${KIPRJMOD}/pretty/3d_shapes/CPG151101S11.wrl"
     (offset (xyz 0 0 -1.4868))
     (scale (xyz 0.3937 0.3937 0.3937))
     (rotate (xyz 0 0 0))

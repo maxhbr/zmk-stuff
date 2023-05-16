@@ -60,7 +60,6 @@
       (xy -7.14375 -8.334375)
       (xy -8.334375 -5.953125)
       (xy -9.525 -5.953125)
-      (xy -9.525 -5.953125)
       (xy -10.715625 -4.7625)
       (xy -10.715625 0)
       (xy -9.525 1.190625)
@@ -99,7 +98,6 @@
       (xy -4.7625 -8.334375)
       (xy -8.334375 -8.334375)
       (xy -9.525 -7.14375)
-      (xy -9.525 -7.14375)
     )
 
     (stroke (width 0.12) (type dot)) (fill none) (layer "User.2") (tstamp 920f25e6-14f5-47c3-9e71-26cddefc34fc))
@@ -116,7 +114,7 @@
   (pad "2" smd rect (at 5.842 -5.08) (size 4.5 2.5) (layers "B.Cu") (tstamp 93d75143-114f-4cd0-ae09-13fc5ff75988))
   (pad "2" thru_hole circle (at 7.62 -5.842) (size 0.8 0.8) (drill 0.4) (layers "*.Cu") (tstamp 5c6d2ffd-4490-4ab9-a780-052a8502c257))
   (pad "2" thru_hole circle (at 7.62 -4.318) (size 0.8 0.8) (drill 0.4) (layers "*.Cu") (tstamp 2c84aab9-b079-475e-ae15-47793943ee1c))
-  (model "${KILIB}/MX_Alps_Hybrid.pretty/MX_Only.pretty/3d_shapes/CPG151101S11.wrl"
+  (model "${KIPRJMOD}/pretty/3d_shapes/CPG151101S11.wrl"
     (offset (xyz 0 0 -1.4868))
     (scale (xyz 0.3937 0.3937 0.3937))
     (rotate (xyz 0 0 0))
