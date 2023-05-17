@@ -193,3 +193,9 @@
 [submodule "submodules/TOTEM"]
 	path = submodules/TOTEM
 	url = https://github.com/GEIGEIGEIST/TOTEM
+[submodule "submodules/hummingbird"]
+	path = submodules/hummingbird
+	url = https://github.com/PJE66/hummingbird
+[submodule "submodules/kicad_templates"]
+	path = submodules/kicad_templates
+	url = https://github.com/sethhillbrand/kicad_templates
