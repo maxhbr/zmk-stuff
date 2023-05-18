@@ -4,6 +4,8 @@
 
 similar to https://github.com/maxhbr/redox-meets-dao-choc-ble, but with a different set of electronics.
 
+*The shift registers are dropped for now, to iterate faster*
+
 ** The Idea:
 *** Take the electronics from revxlp / uninarf
 - Maybe with potential for (partial) JLC PCBA assembly
