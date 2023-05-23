@@ -199,3 +199,6 @@
 [submodule "submodules/kicad_templates"]
 	path = submodules/kicad_templates
 	url = https://github.com/sethhillbrand/kicad_templates
+[submodule "submodules/fingerpunch"]
+	path = submodules/fingerpunch
+	url = https://github.com/sadekbaroudi/fingerpunch
