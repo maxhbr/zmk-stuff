@@ -202,3 +202,6 @@
 [submodule "submodules/fingerpunch"]
 	path = submodules/fingerpunch
 	url = https://github.com/sadekbaroudi/fingerpunch
+[submodule "mykeeb/submodules/kicad_templates"]
+	path = mykeeb/submodules/kicad_templates
+	url = https://github.com/sethhillbrand/kicad_templates
