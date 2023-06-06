@@ -60,10 +60,9 @@
       34,
       35,
       36,
-      39,
       40
     ],
-    "visible_layers": "002f0d8_80000007",
+    "visible_layers": "80bffff_ffffffff",
     "zone_display_mode": 0
   },
   "meta": {
