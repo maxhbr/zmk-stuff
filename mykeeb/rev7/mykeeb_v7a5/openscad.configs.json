@@ -1,0 +1,21 @@
+{
+    "parameterSets": {
+        "case": {
+            "var_right": "false",
+            "var_type": "case"
+        },
+        "case_right": {
+            "var_right": "true",
+            "var_type": "case"
+        },
+        "base": {
+            "var_right": "false",
+            "var_type": "base"
+        },
+        "base_right": {
+            "var_right": "true",
+            "var_type": "base"
+        }
+    },
+    "fileFormatVersion": "1"
+}

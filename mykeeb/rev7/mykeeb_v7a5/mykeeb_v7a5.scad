@@ -1,5 +1,9 @@
+// include lipo
+var_type="case"; // ["case", "base"]
+// which side
+var_right=false; // [true,false]
 
-
+/* [hidden] */
 svgs = ["svgs/mykeeb_v7a5-Edge_Cuts.svg"       // 0
        ,"svgs/mykeeb_v7a5-plate-Edge_Cuts.svg" // 1
        ,"svgs/mykeeb_v7a5-base-Edge_Cuts.svg"  // 2
@@ -20,6 +24,7 @@ svgs = ["svgs/mykeeb_v7a5-Edge_Cuts.svg"       // 0
        ,"svgs/mykeeb_v7a5-User_9.svg"          // 17
        ,"svgs/mykeeb_v7a5-base-pcb.svg"        // 18
        ];
+
 zOffset = [0,0,0];
 fcadOffset = [-1.70619,-1.72682,0];
 offsets = [zOffset
@@ -58,14 +63,6 @@ module svg(idx=0,height=1.6) {
         };
 }
 
-module pcb_stl() {
-    if ($preview) {
-        color([0,1,0,0.4])
-            translate([93.5,90.5,0])
-            import("mykeeb_v7a5.stl", convexity=3);
-    }
-}
-
 module pcb(height=1.6) {
     svg(idx=3,height=height);
 }
@@ -91,7 +88,7 @@ module m3_screw_holes(height, add_r=0) {
     } else {
         minkowski() {
             svg(idx=17,height=height-1);
-            cylinder(r=add_r,h=1,$fn=32);
+            cylinder(r=add_r,h=1,$fn=12);
         };
     }
 }
@@ -104,14 +101,17 @@ module m3_support(height) {
     m3_screw_holes(height, add_r=1.8);
 }
 
+module battery_space(height) {
+    svg(idx=14,height=height);
+}
+
 module wiggle(d=0.2) {
-    children();
-    // render()
-    // for (t = [[d,d,0],[0,d,0],[-d,d,0]
-    //          ,[d,0,0],[0,0,0],[-d,0,0]
-    //          ,[d,-d,0],[0,-d,0],[-d,-d,0]]) {
-    //     translate(t) render() children();
-    // }
+    render()
+    for (t = [[d,d,0],[0,d,0],[-d,d,0]
+             ,[d,0,0],[0,0,0],[-d,0,0]
+             ,[d,-d,0],[0,-d,0],[-d,-d,0]]) {
+        translate(t) render() children();
+    }
 }
 
 module top_outer_hull() {
@@ -122,7 +122,7 @@ module top_outer_hull() {
             translate([0,0,-height_below_pcb + mink])
                 base_pcb(height=5 + 1.6 + height_below_pcb - mink);
             translate([0,0,- mink/2])
-                cylinder($fn = 6, h=mink, r1=mink, r2=0, center=true);
+                cylinder($fn = 6, h=mink, r1=mink, r2=0.3, center=true);
         }
 }
 
@@ -131,29 +131,27 @@ module top_inner_subtract() {
     color("red") {
         translate([0,0,1.6])
             switch_cutout();
-        translate([0,0,1.6])
-            over_pcb_space();
+        translate([0,0,-2])
+            over_pcb_space(height = 3 + 1.6 + 2);
         translate([0,0,-10]) {
             difference() {
                 wiggle()
                     pcb(height = 1.6 + 10 + space_over_pcb);
                 m3_support(height = 1.6 + 10 + space_over_pcb);
             }
-            base_pcb(height = 10);
+            wiggle()
+                base_pcb(height = 10);
             under_pcb_space(height = 10);
         }
     }
 }
 
 module top() {
-    render()
     difference() {
         top_outer_hull();
         top_inner_subtract();
         translate([0,0,-10])
             m3_inserts(16.3);
-        // wiggle()
-        //     bottom();
     }
 }
 
@@ -166,21 +164,57 @@ module bottom_outer_hull() {
 }
 
 module bottom_inner_subtract() {
-    translate([0,0,-2.5])
-        under_pcb_space(height = 2.5);
+    difference() {
+        minkowski() {
+            translate([0,0,-2.5]) {
+                under_pcb_space(height = 2.5);
+                battery_space(height = 2.5);
+            }
+            cylinder(r1=0,r2=1.5,h=2,$fn=12);
+        }
+        translate([0,0,-10])
+            m3_support(height = 10);
+    }
+    translate([0,0,-10])
+        m3_screw_holes(height = 10);
+    translate([0,0,-10])
+        m3_screw_holes(height=7.8, add_r=1);
 }
 
 module bottom() {
-    render()
     difference () {
         bottom_outer_hull();
         bottom_inner_subtract();
     }
 }
 
-
-translate([200,0,0]) {
-    bottom();
-    // pcb_stl();
+if(var_type=="case"){
+    mirror(var_right == false ? [0,0,0] : [1,0,0])
+        top();
+}else if(var_type=="base"){
+    mirror(var_right == false ? [0,0,0] : [1,0,0])
+        bottom();
 }
-top();
+
+// // intersection() {
+// //     union() {
+//         top();
+//         // if ($preview) {
+//         //     color([0,1,0,0.4])
+//         //         translate([93.5,90.5,0])
+//         //         import("mykeeb_v7a5.stl", convexity=3);
+//         // }
+//             // bottom();
+
+//         translate([200,0,0]) {
+//             bottom();
+//             // if ($preview) {
+//             //     color([0,1,0,0.4])
+//             //         translate([93.5,90.5,0])
+//             //         import("mykeeb_v7a5.stl", convexity=3);
+//             // }
+//         }
+// //     }
+// //     translate([-13,0,-50])
+// //     cube([100,100,100]);
+// // }
