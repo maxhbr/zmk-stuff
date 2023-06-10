@@ -73,6 +73,30 @@
     (stroke (width 0.15) (type solid)) (layer "Dwgs.User") (tstamp 9bec5468-d1fd-4e22-8765-213b6d9ea08f))
   (fp_poly
     (pts
+      (xy 7.14375 -7.14375)
+      (xy -7.14375 -7.14375)
+      (xy -7.14375 -4.7625)
+      (xy -8.334375 -3.571875)
+      (xy -8.334375 -1.190625)
+      (xy -7.14375 -1.190625)
+      (xy -5.953125 0)
+      (xy -5.953125 0.595313)
+      (xy -4.7625 1.190625)
+      (xy -2.38125 1.190625)
+      (xy 0 2.38125)
+      (xy 2.38125 1.190625)
+      (xy 4.7625 1.190625)
+      (xy 5.953125 0.595313)
+      (xy 5.953125 0)
+      (xy 7.14375 -1.190625)
+      (xy 8.334375 -1.190625)
+      (xy 8.334375 -3.571875)
+      (xy 7.14375 -4.7625)
+    )
+
+    (stroke (width 0.12) (type solid)) (fill solid) (layer "User.1") (tstamp 72a18f22-534b-454d-9c33-d3f5a4f7e6ae))
+  (fp_poly
+    (pts
       (xy 7.14375 -8.334375)
       (xy 4.7625 -8.334375)
       (xy 3.571875 -9.525)
@@ -118,6 +142,28 @@
     )
 
     (stroke (width 0.12) (type dot)) (fill none) (layer "User.2") (tstamp ae476848-5642-4a77-ac9d-34dc476134b7))
+  (fp_poly
+    (pts
+      (xy 3.571875 -7.14375)
+      (xy 3.571875 7.14375)
+      (xy 2.38125 8.334375)
+      (xy -2.38125 8.334375)
+      (xy -3.571875 7.14375)
+      (xy -3.571875 -7.14375)
+      (xy -2.38125 -8.334375)
+      (xy 2.38125 -8.334375)
+    )
+
+    (stroke (width 0) (type solid)) (fill solid) (layer "User.3") (tstamp 3d2a9d6c-9ed2-41eb-ac00-59bf0fd7be12))
+  (fp_poly
+    (pts
+      (xy 7.14375 7.14375)
+      (xy -7.14375 7.14375)
+      (xy -7.14375 -7.14375)
+      (xy 7.14375 -7.14375)
+    )
+
+    (stroke (width 0) (type solid)) (fill solid) (layer "User.4") (tstamp 62f2be94-e9be-4671-bfe0-b8950d8c33a5))
   (pad "" np_thru_hole circle (at -5.08 0) (size 1.9 1.9) (drill 1.9) (layers "*.Cu" "*.Mask") (tstamp 1db26453-16e4-4329-a31d-4f6e666b5625))
   (pad "" np_thru_hole circle (at -3.81 -2.54) (size 3 3) (drill 3) (layers "*.Cu" "*.Mask") (tstamp 01f34ff3-2996-45b9-a39f-d28d0bd60f77))
   (pad "" np_thru_hole circle (at 0 0 90) (size 4.1 4.1) (drill 4.1) (layers "*.Cu" "*.Mask") (tstamp 8b8744b4-ff6a-4b3d-ab4d-33ef96389dd2))
