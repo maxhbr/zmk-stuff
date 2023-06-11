@@ -1,5 +1,5 @@
 // include lipo
-var_type="case"; // ["case", "base"]
+var_type="case"; // ["case", "base","wip"]
 // which side
 var_right=false; // [true,false]
 
@@ -74,6 +74,9 @@ module base_pcb(height=1.6) {
 module under_pcb_space(height=1) {
     svg(idx=9,height=height);
 }
+module next_to_pcb_space(height=1) {
+    svg(idx=15,height=height);
+}
 module over_pcb_space(height=3) {
     svg(idx=11,height=height);
 }
@@ -132,7 +135,7 @@ module top_inner_subtract() {
         translate([0,0,1.6])
             switch_cutout();
         translate([0,0,-2])
-            over_pcb_space(height = 3 + 1.6 + 2);
+            over_pcb_space(height = 3.5 + 1.6 + 2);
         translate([0,0,-10]) {
             difference() {
                 wiggle()
@@ -141,6 +144,7 @@ module top_inner_subtract() {
             }
             wiggle()
                 base_pcb(height = 10);
+            next_to_pcb_space(height = 10+1.6+1);
             under_pcb_space(height = 10);
         }
     }
@@ -155,15 +159,23 @@ module top() {
     }
 }
 
-module bottom_outer_hull() {
-    height_below_pcb = 1.5;
-    translate([0,0,-height_below_pcb])
-        m3_support(height = height_below_pcb);
+module bottom_m3_studs(height_below_pcb) {
+    translate([0,0,-height_below_pcb]) {
+        minkowski() {
+            m3_screw_holes(height_below_pcb, add_r=1.3);
+            translate([0,0,- 1/2])
+                cylinder($fn = 6, h=1, r1=0.5, r2=0, center=true);
+        }
+    }
+}
+
+module bottom_outer_hull(height_below_pcb) {
+    bottom_m3_studs(height_below_pcb);
     translate([0,0,-height_below_pcb - 2])
         base_pcb(height = 2);
 }
 
-module bottom_inner_subtract() {
+module bottom_inner_subtract(height_below_pcb) {
     difference() {
         minkowski() {
             translate([0,0,-2.5]) {
@@ -172,49 +184,47 @@ module bottom_inner_subtract() {
             }
             cylinder(r1=0,r2=1.5,h=2,$fn=12);
         }
-        translate([0,0,-10])
-            m3_support(height = 10);
+        bottom_m3_studs(height_below_pcb);
     }
     translate([0,0,-10])
         m3_screw_holes(height = 10);
-    translate([0,0,-10])
-        m3_screw_holes(height=7.8, add_r=1);
+    translate([0,0,-2])
+        bottom_m3_studs(height_below_pcb);
 }
 
 module bottom() {
+    height_below_pcb = 1.5;
     difference () {
-        bottom_outer_hull();
-        bottom_inner_subtract();
+        bottom_outer_hull(height_below_pcb);
+        bottom_inner_subtract(height_below_pcb);
     }
 }
 
 if(var_type=="case"){
     mirror(var_right == false ? [0,0,0] : [1,0,0])
         top();
+    if($preview) {
+        translate([0,150,0]) top_outer_hull();
+        translate([0,-150,0]) top_inner_subtract();
+    }
 }else if(var_type=="base"){
     mirror(var_right == false ? [0,0,0] : [1,0,0])
         bottom();
+    // if($preview) {
+    //     translate([0,150,0]) bottom_outer_hull();
+    //     translate([0,-150,0]) bottom_inner_subtract();
+    // }
+}else{
+    intersection() {
+        cube([200,200,200],center=true);
+        union() {
+            top();
+            bottom();
+            // if ($preview) {
+                color([0,1,0,0.4])
+                    translate([93.5,90.5,0])
+                    import("mykeeb_v7a5.stl", convexity=3);
+            // }
+        }
+    }
 }
-
-// // intersection() {
-// //     union() {
-//         top();
-//         // if ($preview) {
-//         //     color([0,1,0,0.4])
-//         //         translate([93.5,90.5,0])
-//         //         import("mykeeb_v7a5.stl", convexity=3);
-//         // }
-//             // bottom();
-
-//         translate([200,0,0]) {
-//             bottom();
-//             // if ($preview) {
-//             //     color([0,1,0,0.4])
-//             //         translate([93.5,90.5,0])
-//             //         import("mykeeb_v7a5.stl", convexity=3);
-//             // }
-//         }
-// //     }
-// //     translate([-13,0,-50])
-// //     cube([100,100,100]);
-// // }
