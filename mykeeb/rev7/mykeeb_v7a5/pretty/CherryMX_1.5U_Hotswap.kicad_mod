@@ -157,10 +157,10 @@
     (stroke (width 0) (type solid)) (fill solid) (layer "User.3") (tstamp 030c73a9-65b9-4826-ab0f-36d3449d0671))
   (fp_poly
     (pts
-      (xy 7.14375 7.14375)
-      (xy -7.14375 7.14375)
-      (xy -7.14375 -7.14375)
-      (xy 7.14375 -7.14375)
+      (xy 7 7)
+      (xy -7 7)
+      (xy -7 -7)
+      (xy 7 -7)
     )
 
     (stroke (width 0) (type solid)) (fill solid) (layer "User.4") (tstamp c343bab7-50bc-4556-87fc-e86eee8b93d1))
