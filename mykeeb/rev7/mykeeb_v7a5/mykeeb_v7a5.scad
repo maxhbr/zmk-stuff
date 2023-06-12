@@ -120,6 +120,14 @@ module wiggle(d=0.2) {
     }
 }
 
+module battery_switch_subtract() {
+        minkowski() {
+            translate([103,37,-5-2])
+                cube([4,10,10],center=true, $fn=20);
+            sphere(2);
+        }
+}
+
 module top_outer_hull() {
     mink=1.5;
     height_below_pcb = 3.5;
@@ -171,6 +179,8 @@ module top_inner_subtract() {
             next_to_pcb_space(height = 10+1.6+1);
             under_pcb_space(height = 10);
         }
+
+        battery_switch_subtract();
     }
 }
 
@@ -217,6 +227,7 @@ module bottom_inner_subtract() {
             m3_screw_holes(height=1);
             cylinder(r1=1.5, r2=0, h=1.5, $fn=12);
         }
+    battery_switch_subtract();
     // translate([0,0,-2])
     //     bottom_m3_studs();
 }
