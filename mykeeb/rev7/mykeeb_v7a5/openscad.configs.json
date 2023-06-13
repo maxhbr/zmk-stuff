@@ -1,21 +1,13 @@
 {
     "parameterSets": {
-        "case": {
-            "var_right": "false",
-            "var_type": "case"
-        },
-        "case_right": {
-            "var_right": "true",
-            "var_type": "case"
-        },
-        "base": {
-            "var_right": "false",
-            "var_type": "base"
-        },
-        "base_right": {
-            "var_right": "true",
-            "var_type": "base"
-        }
+        "case":               { "var_right": "false", "var_type": "case", "var_lipo": "true" },
+        "case_right":         { "var_right": "true",  "var_type": "case", "var_lipo": "true" },
+        "base":               { "var_right": "false", "var_type": "base", "var_lipo": "true" },
+        "base_right":         { "var_right": "true",  "var_type": "base", "var_lipo": "true" },
+        "case_no-lipo":       { "var_right": "false", "var_type": "case", "var_lipo": "false" },
+        "case_right_no-lipo": { "var_right": "true",  "var_type": "case", "var_lipo": "false" },
+        "base_no-lipo":       { "var_right": "false", "var_type": "base", "var_lipo": "false" },
+        "base_right_no-lipo": { "var_right": "true",  "var_type": "base", "var_lipo": "false" }
     },
     "fileFormatVersion": "1"
 }

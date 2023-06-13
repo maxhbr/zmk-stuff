@@ -26,6 +26,10 @@ stls/mykeeb_v7a5.left.stl:case
 stls/mykeeb_v7a5.right.stl:case_right
 stls/mykeeb_v7a5.base.left.stl:base
 stls/mykeeb_v7a5.base.right.stl:base_right
+stls/no-lipo/mykeeb_v7a5.left.stl:case_no-lipo
+stls/no-lipo/mykeeb_v7a5.right.stl:case_right_no-lipo
+stls/no-lipo/mykeeb_v7a5.base.left.stl:base_no-lipo
+stls/no-lipo/mykeeb_v7a5.base.right.stl:base_right_no-lipo
 EOF
 
 wait

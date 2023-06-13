@@ -1,7 +1,9 @@
 // include lipo
-var_type="case"; // ["case", "base","wip"]
+var_type="case"; // ["case", "base","wip","wip-both"]
 // which side
 var_right=false; // [true,false]
+// wireless?
+var_lipo=true; // [true,false]
 
 /* [hidden] */
 
@@ -121,11 +123,19 @@ module wiggle(d=0.2) {
 }
 
 module battery_switch_subtract() {
+    if (var_lipo) {
         minkowski() {
             translate([103,37,-5-2])
-                cube([4,10,10],center=true, $fn=20);
-            sphere(2);
+                cube([6,10,10],center=true, $fn=20);
+            sphere(2,$fn=20);
         }
+    }
+}
+
+module actual_pcb() {
+    color([0,1,0,0.4])
+        translate([93.5,90.5,0])
+        import("mykeeb_v7a5.stl", convexity=3);
 }
 
 module top_outer_hull() {
@@ -150,7 +160,7 @@ module top_inner_subtract() {
             difference() {
                 minkowski() {
                     union() {
-                        difference() {
+                        if (var_lipo) {
                             intersection_for(t=[[0,0,0],[0,-2.5,0],[-3,-1.5,0]]) {
                                 translate(t)
                                     battery_space(height = 3.5 + 1.6 + 10);
@@ -214,7 +224,9 @@ module bottom_inner_subtract() {
         minkowski() {
             translate([0,0,-2.5]) {
                 under_pcb_space(height = 2.5);
-                battery_space(height = 2.5);
+                if (var_lipo) {
+                    battery_space(height = 2.5);
+                }
             }
             cylinder(r1=0,r2=1.5,h=2,$fn=12);
         }
@@ -253,6 +265,10 @@ if(var_type=="case"){
         translate([0,150,0]) bottom_outer_hull();
         translate([0,-150,0]) bottom_inner_subtract();
     }
+}else if(var_type=="wip-both"){
+    top();
+    bottom();
+    actual_pcb();
 }else{
     intersection() {
         top();
@@ -266,9 +282,7 @@ if(var_type=="case"){
         }
     }
     intersection() {
-        color([0,1,0,0.4])
-            translate([93.5,90.5,0])
-            import("mykeeb_v7a5.stl", convexity=3);
+        actual_pcb();
         sphere(115);
     }
 }
