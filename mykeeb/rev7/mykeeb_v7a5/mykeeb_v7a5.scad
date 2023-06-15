@@ -4,10 +4,13 @@ var_type="case"; // ["case", "base","wip","wip-both"]
 var_right=false; // [true,false]
 // wireless?
 var_lipo=true; // [true,false]
+// tent?
+var_tent=false; // [true,false]
 
 /* [hidden] */
 
-height_below_pcb = 1.5;
+bottom_height=2.7;
+height_below_pcb = 0.7;
 
 svgs = ["svgs/mykeeb_v7a5-Edge_Cuts.svg"       // 0
        ,"svgs/mykeeb_v7a5-plate-Edge_Cuts.svg" // 1
@@ -95,8 +98,8 @@ module m3_screw_holes(height, add_r=0) {
         svg(idx=17,height=height);
     } else {
         minkowski() {
-            svg(idx=17,height=height-1);
-            cylinder(r=add_r,h=1,$fn=12);
+            svg(idx=17,height=height-0.1);
+            cylinder(r=add_r,h=0.1,$fn=12);
         };
     }
 }
@@ -138,20 +141,41 @@ module actual_pcb() {
         import("mykeeb_v7a5.stl", convexity=3);
 }
 
+
+module maybe_tent(angle=40) {
+    dx=7.5;
+    if (var_tent) {
+        translate([dx,0,0])
+            rotate([0,-angle,0])
+            translate([-dx,0,0])
+            children();
+    } else {
+        children();
+    }
+}
+
+module tent_table() {
+    if (var_tent) {
+        maybe_tent(-40)
+            translate([0,0,-50])
+            cube([50,150,50]);
+    }
+}
+
 module top_outer_hull() {
+    h_over_zero = 5 + 1.6;
+    h_below_zero = bottom_height;
     mink=1.5;
-    height_below_pcb = 3.5;
     render()
         minkowski() {
-            translate([0,0,-height_below_pcb + mink])
-                base_pcb(height=5 + 1.6 + height_below_pcb - mink);
-            translate([0,0,- mink/2])
-                cylinder($fn = 6, h=mink, r1=mink, r2=0.3, center=true);
+            translate([0,0,-bottom_height + mink])
+                base_pcb(height=5 + 1.6 + bottom_height - mink);
+            translate([0,0,- mink])
+                cylinder($fn = 6, h=mink, r1=mink, r2=0.3);
         }
 }
 
 module top_inner_subtract() {
-    height_below_pcb = 1.5;
     space_over_pcb = 1;
     color("red") {
         translate([0,0,1.6])
@@ -200,54 +224,67 @@ module top() {
         top_inner_subtract();
         translate([0,0,-10])
             m3_inserts(16.3);
+        tent_table();
     }
 }
 
 module bottom_m3_studs() {
-    translate([0,0,-height_below_pcb]) {
+    mink_h=0.6;
+    translate([0,0,-bottom_height]) {
         minkowski() {
-            m3_screw_holes(height_below_pcb, add_r=1.3);
-            translate([0,0,- 1/2])
-                cylinder($fn = 6, h=1, r1=0.5, r2=0, center=true);
+            m3_screw_holes(bottom_height-mink_h, add_r=1.3);
+            cylinder($fn = 6, h=mink_h, r1=mink_h/2, r2=0);
         }
     }
 }
 
 module bottom_outer_hull() {
     bottom_m3_studs();
-    translate([0,0,-height_below_pcb - 2])
-        base_pcb(height = 2);
+    translate([0,0,-bottom_height])
+        base_pcb(height = bottom_height - height_below_pcb);
 }
 
 module bottom_inner_subtract() {
     difference() {
-        minkowski() {
-            translate([0,0,-2.5]) {
-                under_pcb_space(height = 2.5);
-                if (var_lipo) {
-                    battery_space(height = 2.5);
+        union() {
+            mink_h = 0.5;
+            minkowski() {
+                translate([0,0,-2.25]) {
+                    under_pcb_space(height = 2.5);
+                    if (var_lipo) {
+                        battery_space(height = 2.5);
+                    }
                 }
+                cylinder(r1=0, r2=mink_h * 0.75, h=mink_h, $fn=12);
             }
-            cylinder(r1=0,r2=1.5,h=2,$fn=12);
+            minkowski() {
+                translate([0,0,-height_below_pcb-0.3]) {
+                    under_pcb_space(height = height_below_pcb);
+                    if (var_lipo) {
+                        battery_space(height = height_below_pcb);
+                    }
+                }
+                cylinder(r1=mink_h * 0.75, r2=mink_h * 0.75+0.3, h=0.3, $fn=12);
+            }
         }
         bottom_m3_studs();
     }
     translate([0,0,-10])
         m3_screw_holes(height = 10);
-    translate([0,0,- (1 + 1 + 2.5)])
+    translate([0,0,- (1 + 1 + 1 + height_below_pcb)+0.3])
         minkowski() {
             m3_screw_holes(height=1);
             cylinder(r1=1.5, r2=0, h=1.5, $fn=12);
         }
-    battery_switch_subtract();
-    // translate([0,0,-2])
-    //     bottom_m3_studs();
+    translate([0,0,2])
+        battery_switch_subtract();
 }
 
 module bottom() {
     difference () {
         bottom_outer_hull();
         bottom_inner_subtract();
+        tent_table();
     }
 }
 
@@ -266,23 +303,27 @@ if(var_type=="case"){
         translate([0,-150,0]) bottom_inner_subtract();
     }
 }else if(var_type=="wip-both"){
-    top();
-    bottom();
-    actual_pcb();
-}else{
-    intersection() {
+    maybe_tent() {
         top();
-        sphere(100);
-    }
-    intersection() {
         bottom();
-        difference() {
-            sphere(130);
-            sphere(85);
-        }
-    }
-    intersection() {
         actual_pcb();
-        sphere(115);
+    }
+}else{
+    maybe_tent() {
+        intersection() {
+            top();
+            sphere(100);
+        }
+        intersection() {
+            bottom();
+            difference() {
+                sphere(131);
+                sphere(85);
+            }
+        }
+        intersection() {
+            actual_pcb();
+            sphere(115);
+        }
     }
 }
