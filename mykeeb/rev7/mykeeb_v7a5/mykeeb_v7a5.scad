@@ -159,6 +159,12 @@ module tent_table() {
         maybe_tent(-40)
             translate([0,0,-50])
             cube([50,150,50]);
+        maybe_tent(-30)
+            translate([0,0,-50])
+            cube([50,150,50]);
+        maybe_tent(-20)
+            translate([0,0,-50])
+            cube([50,150,50]);
     }
 }
 
