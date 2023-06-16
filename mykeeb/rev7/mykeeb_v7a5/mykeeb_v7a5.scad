@@ -201,10 +201,6 @@ module top_inner_subtract() {
                     pcb(height = 1.6 + 10 + space_over_pcb);
                 m3_support(height = 1.6 + 10 + space_over_pcb);
             }
-            difference() {
-                wiggle(d=0.4)
-                    pcb(height = 10);
-            }
             intersection () {
                 m3_screw_holes(height=10, add_r=6);
                 base_pcb(height = 10);
