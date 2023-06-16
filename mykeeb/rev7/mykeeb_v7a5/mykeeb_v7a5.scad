@@ -205,7 +205,7 @@ module top_inner_subtract() {
                 m3_screw_holes(height=10, add_r=6);
                 base_pcb(height = 10);
             }
-            wiggle(d=0.4) base_pcb(height = 10-height_below_pcb);
+            wiggle(d=0.3) base_pcb(height = 10-height_below_pcb);
             next_to_pcb_space(height = 10+1.6+1);
             under_pcb_space(height = 10);
         }
