@@ -9,7 +9,9 @@
         "base_no-lipo":       { "var_right": "false", "var_type": "base", "var_lipo": "false" },
         "base_right_no-lipo": { "var_right": "true",  "var_type": "base", "var_lipo": "false" },
         "case_tent":          { "var_right": "false", "var_type": "case", "var_tent": "true"  },
-        "case_right_tent":    { "var_right": "true",  "var_type": "case", "var_tent": "true"  }
+        "case_right_tent":    { "var_right": "true",  "var_type": "case", "var_tent": "true"  },
+        "base_tent":          { "var_right": "false", "var_type": "base", "var_tent": "true"  },
+        "base_right_tent":    { "var_right": "true",  "var_type": "base", "var_tent": "true"  }
     },
     "fileFormatVersion": "1"
 }

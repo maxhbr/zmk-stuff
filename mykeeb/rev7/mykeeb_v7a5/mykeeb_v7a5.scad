@@ -1,11 +1,13 @@
 // include lipo
-var_type="case"; // ["case", "base","wip","wip-both"]
+var_type="case"; // ["case", "base","wip","wip-both","wip-cuts"]
 // which side
 var_right=false; // [true,false]
 // wireless?
 var_lipo=true; // [true,false]
 // tent?
 var_tent=false; // [true,false]
+// tent_angle?
+var_tent_angle=40;
 
 /* [hidden] */
 
@@ -142,7 +144,7 @@ module actual_pcb() {
 }
 
 
-module maybe_tent(angle=40) {
+module maybe_tent(angle=var_tent_angle) {
     dx=7.5;
     if (var_tent) {
         translate([dx,0,0])
@@ -156,15 +158,21 @@ module maybe_tent(angle=40) {
 
 module tent_table() {
     if (var_tent) {
-        maybe_tent(-40)
+        maybe_tent(-var_tent_angle)
             translate([0,0,-50])
-            cube([50,150,50]);
-        maybe_tent(-30)
-            translate([0,0,-50])
-            cube([50,150,50]);
-        maybe_tent(-20)
-            translate([0,0,-50])
-            cube([50,150,50]);
+            cube([500,150,50]);
+    }
+}
+
+module tent_wedge() {
+    intersection() {
+                maybe_tent(-var_tent_angle)
+                linear_extrude(height = 300)
+                    maybe_tent(var_tent_angle)
+                    translate(offsets[18])
+                    import(file = svgs[18],  dpi = 96);
+        translate([0,0,-200])
+        cube([200,300,200]);
     }
 }
 
@@ -226,7 +234,7 @@ module top() {
         top_inner_subtract();
         translate([0,0,-10])
             m3_inserts(16.3);
-        tent_table();
+        // tent_table();
     }
 }
 
@@ -241,19 +249,38 @@ module bottom_m3_studs() {
 }
 
 module bottom_outer_hull() {
-    bottom_m3_studs();
     translate([0,0,-bottom_height])
         base_pcb(height = bottom_height - height_below_pcb);
 }
 
-module bottom_inner_subtract() {
+module tent_bottom_outer_hull() {
+    intersection() {
+        union() {
+            bottom_outer_hull();
+            translate([0,0,-bottom_height])
+            tent_wedge();
+        }
+        maybe_tent(-var_tent_angle)
+            translate([10,0,0])
+            cube([300,300,300]);
+    }
+    translate([0,0,-height_below_pcb])
+            m3_support(height = height_below_pcb + 1.6);
+    // difference() {
+    //     translate([0,0,-bottom_height-10])
+    //         base_pcb(height = bottom_height + 10 - height_below_pcb);
+    //     // tent_table();
+    // }
+}
+
+module common_bottom_inner_subtract() {
     difference() {
         union() {
             mink_h = 0.5;
             minkowski() {
                 translate([0,0,-2.25]) {
                     under_pcb_space(height = 2.5);
-                    if (var_lipo) {
+                    if (var_lipo && !  var_tent) {
                         battery_space(height = 2.5);
                     }
                 }
@@ -262,7 +289,7 @@ module bottom_inner_subtract() {
             minkowski() {
                 translate([0,0,-height_below_pcb-0.3]) {
                     under_pcb_space(height = height_below_pcb);
-                    if (var_lipo) {
+                    if (var_lipo && !  var_tent) {
                         battery_space(height = height_below_pcb);
                     }
                 }
@@ -271,6 +298,10 @@ module bottom_inner_subtract() {
         }
         bottom_m3_studs();
     }
+}
+
+module bottom_inner_subtract() {
+    common_bottom_inner_subtract();
     translate([0,0,-10])
         m3_screw_holes(height = 10);
     translate([0,0,- (1 + 1 + 1 + height_below_pcb)+0.3])
@@ -282,11 +313,78 @@ module bottom_inner_subtract() {
         battery_switch_subtract();
 }
 
-module bottom() {
+module bottom_no_tent() {
     difference () {
-        bottom_outer_hull();
+        union() {
+            bottom_outer_hull();
+            bottom_m3_studs();
+        }
         bottom_inner_subtract();
-        tent_table();
+    }
+}
+
+module tent_bottom() {
+    maybe_tent()
+        difference () {
+            tent_bottom_outer_hull();
+            translate([0,0,-4])
+                m3_inserts(16.3);
+            common_bottom_inner_subtract();
+            maybe_tent(-var_tent_angle) {
+                intersection() {
+                    union() {
+                        difference() {
+                            translate([70,0,0])
+                                scale([1,1,1.3])
+                                rotate([-90,0,0])
+                                cylinder(r=30,h=150,$fn=100);
+                            union() {
+                                translate([64, 40, 0]) {
+                                    cylinder(r=10,h=60);
+                                }
+                                translate([68.5, 123, 0]) {
+                                    cylinder(r=5,h=60);
+                                }
+
+                            }
+
+                        }
+                        translate([70,-15,45])
+                            scale([1,1.4,1.6])
+                            rotate([0,90,0])
+                            cylinder(r=30,h=150,$fn=100);
+                        translate([90,73,5])
+                            maybe_tent()
+                            scale([1,1.1,1.6])
+                            rotate([0,90,0])
+                            cylinder(r=30,h=150,$fn=100);
+                        translate([150,0,50])
+                            scale([1,1,1.8])
+                            rotate([-90,0,0])
+                            cylinder(r=30,h=150,$fn=100);
+                        translate([130,70,40])
+                            scale([1,1,1.6])
+                            rotate([-90,0,0])
+                            cylinder(r=30,h=150,$fn=100);
+                    }
+                    difference() {
+                        translate([0,0,1]) cube([300,300,300]);
+                        translate([0,15.5,1]) cube([300,30,1]);
+                        translate([0,106,1]) cube([100,30,1]);
+                    }
+                }
+            }
+            maybe_tent(-var_tent_angle)
+                        translate([130,120,-50])
+                            cube([300,300,300]);
+        };
+}
+
+module bottom() {
+    if (var_tent) {
+        tent_bottom();
+    } else {
+        bottom_no_tent();
     }
 }
 
@@ -307,15 +405,20 @@ if(var_type=="case"){
 }else if(var_type=="wip-both"){
     maybe_tent() {
         top();
-        bottom();
         actual_pcb();
+        bottom();
     }
-}else{
+}else if(var_type=="wip-cuts"){
     maybe_tent() {
         intersection() {
             top();
             sphere(100);
         }
+        intersection() {
+            actual_pcb();
+            sphere(115);
+        }
+    }
         intersection() {
             bottom();
             difference() {
@@ -323,9 +426,11 @@ if(var_type=="case"){
                 sphere(85);
             }
         }
-        intersection() {
-            actual_pcb();
-            sphere(115);
-        }
-    }
+}else{
+
+    tent_bottom();
+    // dx=7.5;
+    //     rotate_extrude(angle = 30, convexity = 2)
+    //     translate(offsets[18])
+    //     import(file = svgs[18],  dpi = 96);
 }
