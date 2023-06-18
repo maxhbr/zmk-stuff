@@ -181,7 +181,7 @@ module tent_wedge() {
 module top_outer_hull() {
     h_over_zero = 5 + 1.6;
     h_below_zero = bottom_height;
-    mink=1.5;
+    mink=1.8;
     render()
         minkowski() {
             translate([0,0,-bottom_height + mink])
@@ -468,7 +468,8 @@ if(var_type=="case"){
         }
 }else{
 
-    tent_bottom();
+
+    // tent_bottom();
     // dx=7.5;
     //     rotate_extrude(angle = 30, convexity = 2)
     //     translate(offsets[18])
