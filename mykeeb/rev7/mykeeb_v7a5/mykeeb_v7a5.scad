@@ -11,6 +11,8 @@ var_tent_angle=40;
 
 /* [hidden] */
 
+$fn= $preview ? 32 : 64;
+
 bottom_height=2.7;
 height_below_pcb = 0.7;
 
@@ -128,7 +130,7 @@ module wiggle(d=0.2) {
 }
 
 module battery_switch_subtract() {
-    if (var_lipo) {
+    if (var_lipo && ! var_tent) {
         minkowski() {
             translate([103,37,-5-2])
                 cube([6,10,10],center=true, $fn=20);
@@ -251,6 +253,7 @@ module bottom_m3_studs() {
 module bottom_outer_hull() {
     translate([0,0,-bottom_height])
         base_pcb(height = bottom_height - height_below_pcb);
+    bottom_m3_studs();
 }
 
 module tent_bottom_outer_hull() {
@@ -264,13 +267,6 @@ module tent_bottom_outer_hull() {
             translate([10,0,0])
             cube([300,300,300]);
     }
-    translate([0,0,-height_below_pcb])
-            m3_support(height = height_below_pcb + 1.6);
-    // difference() {
-    //     translate([0,0,-bottom_height-10])
-    //         base_pcb(height = bottom_height + 10 - height_below_pcb);
-    //     // tent_table();
-    // }
 }
 
 module common_bottom_inner_subtract() {
@@ -304,9 +300,9 @@ module bottom_inner_subtract() {
     common_bottom_inner_subtract();
     translate([0,0,-10])
         m3_screw_holes(height = 10);
-    translate([0,0,- (1 + 1 + 1 + height_below_pcb)+0.3])
+    translate([0,0,- (1 + 1 + 1 + height_below_pcb)+0.3 -100])
         minkowski() {
-            m3_screw_holes(height=1);
+            m3_screw_holes(height=101);
             cylinder(r1=1.5, r2=0, h=1.5, $fn=12);
         }
     translate([0,0,2])
@@ -315,62 +311,91 @@ module bottom_inner_subtract() {
 
 module bottom_no_tent() {
     difference () {
-        union() {
-            bottom_outer_hull();
-            bottom_m3_studs();
-        }
+        bottom_outer_hull();
         bottom_inner_subtract();
     }
 }
 
+module tent_bottom_hull_subtract() {
+    maybe_tent(-var_tent_angle) {
+        difference() {
+            hull() {
+                translate([70,0,0])
+                    scale([1,1,1.3])
+                    rotate([-90,0,0])
+                    cylinder(r=30,h=150,$fn=100);
+                maybe_tent(var_tent_angle)
+                    translate([100,0,0])
+                    maybe_tent(-var_tent_angle)
+                    translate([70,0,0])
+                    scale([1,1,1.3])
+                    rotate([-90,0,0])
+                    cylinder(r=30,h=150,$fn=100);
+                translate([150,0,0])
+                    scale([1,1,1.3])
+                    rotate([-90,0,0])
+                    cylinder(r=30,h=150,$fn=100);
+            }
+        }
+    }
+}
+
+module tent_bottom_outer_hull_wedge_subtracted() {
+    maybe_tent()
+    difference () {
+        tent_bottom_outer_hull();
+        tent_bottom_hull_subtract();
+    }
+}
+
+module tent_bottom_column(height) {
+   translate([13,9,0]) cube([14,2,height]);
+}
+
+module tent_bottom_column_support(height,mink_r) {
+    minkowski() {
+        hull() {
+            cube([40,20,height - 0.1]);
+            children();
+        }
+        cylinder(r=mink_r,h=0.1);
+    }
+}
+
 module tent_bottom() {
+    column_positions=[[[80,95,0],[0,0,20]]
+                     ,[[105,28,0],[0,0,-60]]
+                     ];
+    mink_r=3.5;
     maybe_tent()
         difference () {
             tent_bottom_outer_hull();
-            translate([0,0,-4])
-                m3_inserts(16.3);
-            common_bottom_inner_subtract();
-            maybe_tent(-var_tent_angle) {
-                intersection() {
-                    union() {
-                        difference() {
-                            translate([70,0,0])
-                                scale([1,1,1.3])
-                                rotate([-90,0,0])
-                                cylinder(r=30,h=150,$fn=100);
-                            union() {
-                                translate([64, 40, 0]) {
-                                    cylinder(r=10,h=60);
-                                }
-                                translate([68.5, 123, 0]) {
-                                    cylinder(r=5,h=60);
-                                }
-
+            bottom_inner_subtract();
+            difference() {
+                tent_bottom_hull_subtract();
+                maybe_tent(-var_tent_angle) {
+                    for(trans=column_positions) {
+                        translate(trans[0])
+                            rotate(trans[1])
+                            minkowski() {
+                                tent_bottom_column(trans[0][0]*0.4);
+                                // cube([40,20,150]);
+                                cylinder(r=mink_r,h=1);
                             }
-
+                        hull() {
+                            translate(trans[0])
+                                rotate(trans[1])
+                                minkowski() {
+                                    translate([0,0,trans[0][0]*0.4]) tent_bottom_column(10);
+                                    cylinder(r=3.5,h=1);
+                                }
+                            intersection() {
+                                translate(trans[0])
+                                    rotate(trans[1])
+                                    tent_bottom_column_support(150, mink_r);
+                                tent_bottom_outer_hull_wedge_subtracted();
+                            }
                         }
-                        translate([70,-15,45])
-                            scale([1,1.4,1.6])
-                            rotate([0,90,0])
-                            cylinder(r=30,h=150,$fn=100);
-                        translate([90,73,5])
-                            maybe_tent()
-                            scale([1,1.1,1.6])
-                            rotate([0,90,0])
-                            cylinder(r=30,h=150,$fn=100);
-                        translate([150,0,50])
-                            scale([1,1,1.8])
-                            rotate([-90,0,0])
-                            cylinder(r=30,h=150,$fn=100);
-                        translate([130,70,40])
-                            scale([1,1,1.6])
-                            rotate([-90,0,0])
-                            cylinder(r=30,h=150,$fn=100);
-                    }
-                    difference() {
-                        translate([0,0,1]) cube([300,300,300]);
-                        translate([0,15.5,1]) cube([300,30,1]);
-                        translate([0,106,1]) cube([100,30,1]);
                     }
                 }
             }
@@ -378,6 +403,21 @@ module tent_bottom() {
                         translate([130,120,-50])
                             cube([300,300,300]);
         };
+    for(trans=column_positions) {
+        translate(trans[0])
+            rotate(trans[1])
+            tent_bottom_column_support(1, mink_r-1) {
+                        tent_bottom_column(11);
+            };
+            // minkowski() {
+            //     hull() {
+            //         intersection() {
+            //         }
+            //         cube([40,20,1]);
+            //     }
+            //     cylinder(r=3.5,h=1);
+            // }
+    }
 }
 
 module bottom() {
@@ -406,8 +446,8 @@ if(var_type=="case"){
     maybe_tent() {
         top();
         actual_pcb();
-        bottom();
     }
+        bottom();
 }else if(var_type=="wip-cuts"){
     maybe_tent() {
         intersection() {
