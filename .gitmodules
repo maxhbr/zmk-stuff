@@ -205,3 +205,6 @@
 [submodule "mykeeb/submodules/kicad_templates"]
 	path = mykeeb/submodules/kicad_templates
 	url = https://github.com/sethhillbrand/kicad_templates
+[submodule "submodules/bad-wings"]
+	path = submodules/bad-wings
+	url = https://github.com/hazels-garage/bad-wings
