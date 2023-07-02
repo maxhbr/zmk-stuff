@@ -144,8 +144,16 @@ module wiggle(d=0.2) {
 module battery_switch_subtract(force = false) {
     if (var_lipo && ! var_tent || force) {
         minkowski() {
-            translate([103,37,-5])
-                cube([6,10,8],center=true, $fn=20);
+            union() {
+                translate([103,37,-8])
+                    cube([6,10,14],center=true, $fn=20);
+                 hull() {
+                    translate([103,37,-13])
+                        cube([6,10,14],center=true, $fn=20);
+                    translate([103,37,-14])
+                        cube([10,14,6],center=true, $fn=20);
+                }
+            }
             sphere(2,$fn=20);
         }
     }
