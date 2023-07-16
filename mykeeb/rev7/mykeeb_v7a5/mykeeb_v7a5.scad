@@ -473,7 +473,6 @@ module big_lipo(add_h) {
 }
 
 module big_lipo_bottom() {
-    // WIP
     angle=5;
     tent(angle=angle)
         difference() {
@@ -534,9 +533,19 @@ module big_lipo_bottom() {
                     }
                     cylinder(r1=0, r2=1, h=1);
                 }
+                // for(t=[[120,47,0]
+                //       ,[115,60,0]
+                //       ,[130,60,0]
+                //       ,[130,90,0]
+                //       ,[130,110,0]
+                //       ,[130,110,0]
+                //     //   ,[90,103,0]
+                //     //   ,[90,83,0]
+                // ]){
+                //     translate(t)
+                //         cylinder(d=4, h=5.7*2+0, center=true);
 
-                // translate([77.6,66,0.7])
-                //     quater_inch_insert();
+                // }
             }
         }
 }
